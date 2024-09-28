@@ -1,0 +1,17 @@
+{% if user.is_authenticated %}
+   <div class="alert alert-success" role="alert">
+       <h2>Welcome {{ user.username }}!</h2>
+       <h3>Centro Non-Profit</h3>
+       <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+   </div>
+{% else %}
+   <div class="alert alert-success" role="alert">
+       <h2>Welcome!</h2>
+       <h3>Centro Non-Profit</h3>
+       <a href="{% url 'register' %}">Signup</a>
+       <a href="{% url 'login' %}">Login</a>
+   </div>
+{% endif %}
