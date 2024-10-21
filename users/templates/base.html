@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon_io/favicon.ico' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'favicon_io/apple-touch-icon.png' %}">
+
+    <title>{% block title %}Centro Non-Profit{% endblock %}</title>
+
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        .logo {
+            width: 150px;
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid bg-light py-2">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-left">
+                <p class="mb-0">
+                    <i class="fas fa-phone"></i> Call us: (123) 456-7890 | 
+                    <i class="fas fa-envelope"></i> Email: info@centroinc.org
+                </p>
+            </div>
+            <div class="col-md-6 text-right">
+                {% if user.is_authenticated %}
+                    <span class="mr-3">Welcome, {{ user.username }}!</span>
+                    <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link btn-sm p-0">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'register' %}" class="btn btn-link btn-sm">Signup</a>
+                    <a href="{% url 'login' %}" class="btn btn-link btn-sm">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="Centro Logo" class="logo">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'about' %}" id="aboutDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="{% url 'team' %}">Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Programs & Initiatives
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li><a class="dropdown-item" href="{% url 'food' %}">Food Pantry</a></li>
+                            <li><a class="dropdown-item" href="{% url 'community' %}">Community Support Services</a></li>
+                            <li><a class="dropdown-item" href="{% url 'foster' %}">Adult & Group Foster Care</a></li>
+                            <li><a class="dropdown-item" href="{% url 'family' %}">Family Support Services</a></li>
+                            <li><a class="dropdown-item" href="{% url 'children' %}">Children & Family Services</a></li>
+                            <li><a class="dropdown-item" href="{% url 'ilac' %}">Institute of Arts and Culture (ILAC)</a></li>
+                            <li><a class="dropdown-item" href="{% url 'nacdc' %}">NACDC</a></li>
+                            <li><a class="dropdown-item" href="{% url 'homeowner' %}">Homeownership</a></li>
+                            <li><a class="dropdown-item" href="{% url 'financial' %}">Financial Empowerment</a></li>
+                            <li><a class="dropdown-item" href="{% url 'rebuild' %}">Rebuilding Futures</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'donate' %}">Get Involved</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            News & Events
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                            <li><a class="dropdown-item" href="{% url 'calendar' %}">Calendar</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Contact
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                            <li><a class="dropdown-item" href="{% url 'careers' %}">Careers</a></li>
+                            <li><a class="dropdown-item" href="{% url 'members' %}">Members</a></li>
+                            <li><a class="dropdown-item" href="{% url 'privacy' %}">Privacy Policy</a></li>
+                            <li><a class="dropdown-item" href="{% url 'terms' %}">Terms of Use</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="formsDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Forms
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="formsDropdown">
+                            <li><a class="dropdown-item" href="{% url 'compliance' %}">Compliance Forms</a></li>
+                            <li><a class="dropdown-item" href="{% url 'referral' %}">General Referral</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="footer bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Centro Non-Profit. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
