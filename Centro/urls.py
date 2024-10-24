@@ -41,4 +41,10 @@ urlpatterns = [
     path('programs/ilac/', user_views.ilac, name='ilac'),
     path('programs/nacdc/', user_views.nacdc, name='nacdc'),
     path('programs/rebuild/', user_views.rebuild, name='rebuild'),
+
+    path('contact/', user_views.contact, name='contact'),
+
+    path('forms/', user_views.forms, name='forms'),
+
+
 ]

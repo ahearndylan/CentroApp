@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     {% load static %}
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <link rel="icon" type="image/x-icon" href="{% static 'favicon_io/favicon.ico' %}">
@@ -22,10 +21,31 @@
             display: block;
         }
 
+        .navbar {
+            height: 80px;
+            background-color: white;
+        }
+
+        .navbar-collapse {
+            z-index: 9999;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .nav-item {
+            margin-bottom: 10px;
+        }
+
+        .dropdown-menu .dropdown-item {
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+
         .navbar-nav .nav-link {
             font-weight: 500;
-            font-size: 16px;
             color: #333;
+            font-size: 18px;
+            padding: 15px 20px;
         }
 
         .navbar-nav .nav-link:hover {
@@ -39,63 +59,252 @@
         .dropdown-toggle::after {
             display: none;
         }
+
+        .top-row-icons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            color: #333;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-section {
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 40px;
+            opacity: 0.15;
+            margin-right: 10px;
+        }
+
+        .footer-title {
+            font-weight: bold;
+            color: #0056b3;
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .footer-section.d-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer hr {
+            border-color: #e2e2e2;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .footer a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .top-link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .top-link:hover {
+            color: #0056b3 !important;
+            text-decoration: underline !important;
+        }
+
+        .nav-link .fa-user-circle {
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .nav-link:hover .fa-user-circle {
+            color: #007bff;
+        }
+
+        .dropdown-item-text {
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .footer-link {
+            color: #333 !important;
+            text-decoration: none !important;
+        }
+
+        .footer-link:hover {
+            color: #0056b3 !important;
+            text-decoration: underline !important;
+        }
+
+        .eeo-logo {
+            max-width: 120px;
+            height: auto;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-logo {
+                margin-bottom: 10px;
+            }
+
+            .footer-section.d-flex {
+                flex-direction: column;
+            }
+
+            .footer-title {
+                margin-top: 10px;
+            }
+
+            .dropdown .nav-link i {
+                margin-top: 40px;
+            }
+
+            .dropdown-menu {
+                position: static;
+                float: none;
+                width: 100%;
+            }
+
+            .navbar-collapse {
+                border-top: 1px solid #ddd;
+            }
+
+            .navbar-nav .dropdown-toggle::after {
+                margin-left: 10px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container-fluid bg-light py-2">
-        <div class="row align-items-center">
-            <div class="col-md-6 text-left">
-                <p class="mb-0">
-                    <i class="fas fa-phone"></i> Call us: (123) 456-7890 | 
-                    <i class="fas fa-envelope"></i> Email: info@centroinc.org
-                </p>
+        <div class="row align-items-center text-center text-md-left">
+            <div class="col-md-6 col-12 mb-2 mb-md-0">
+                <div class="d-flex justify-content-center justify-content-md-start align-items-center">
+                    <div class="dropdown me-3 mt-4 mt-md-0">
+                        <a class="nav-link dropdown-toggle d-inline-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle fa-2x"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            {% if user.is_authenticated %}
+                            <li><span class="dropdown-item-text">Welcome, {{ user.username }}!</span></li>
+                            <li>
+                                <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                            {% else %}
+                            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                            <li><a class="dropdown-item" href="{% url 'register' %}">Signup</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <p class="mb-0">
+                        <i class="fas fa-phone"></i> (123) 456-7890 <br class="d-md-none">
+                        <i class="fas fa-envelope"></i> info@centroinc.org <br class="d-md-none">
+                        <a href="{% url 'news' %}" class="top-link">Newsletter</a> |
+                        <a href="{% url 'referral' %}" class="top-link">General Referral Form</a>
+                    </p>
+                </div>
             </div>
-            <div class="col-md-6 text-right">
-                {% if user.is_authenticated %}
-                    <span class="mr-3">Welcome, {{ user.username }}!</span>
-                    <form method="POST" action="{% url 'logout' %}" style="display:inline;">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-link btn-sm p-0">Logout</button>
-                    </form>
-                {% else %}
-                    <a href="{% url 'register' %}" class="btn btn-link btn-sm">Signup</a>
-                    <a href="{% url 'login' %}" class="btn btn-link btn-sm">Login</a>
-                {% endif %}
+
+            <div class="col-md-6 col-12 text-center text-md-right d-flex justify-content-center justify-content-md-end mt-2 mt-md-0">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item mx-2">
+                        <a class="nav-link" href="https://www.facebook.com/CentroWorcester/" target="_blank">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item mx-2">
+                        <a class="nav-link" href="https://www.instagram.com/centroworcester/" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item mx-2">
+                        <a class="nav-link" href="https://www.youtube.com/@centroinc.312?app=desktop" target="_blank">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item mx-2">
+                        <a class="nav-link" href="https://x.com/centroworcester?lang=en" target="_blank">
+                            <img src="{% static 'img/X_logo_2023_original.svg' %}" alt="X Logo" style="width: 16px;">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 
+    <div class="container-fluid bg-white py-2">
+        <div class="row align-items-center justify-content-center justify-content-md-between">
+            <div class="col-md-4 col-12 d-flex justify-content-center align-items-center mb-3 mb-md-0">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'img/logo1.png' %}" alt="Centro Logo" class="logo" style="width: 220px;">
+                </a>
+            </div>
+
+            <div class="col-md-4 col-12 text-center mb-3 mb-md-0">
+                <p class="mb-0 font-weight-bold" style="font-size: 1.25rem; color: #0056b3;">Empowering Individuals & Families</p>
+            </div>
+
+            <div class="col-md-4 col-12 d-flex flex-column align-items-center align-items-md-end">
+                <div class="d-flex align-items-center mb-2">
+                    <a class="btn btn-outline-primary d-flex align-items-center me-3" href="{% url 'donate' %}">
+                        <span>DONATIONS</span>
+                        <i class="fas fa-chevron-right ms-2"></i>
+                    </a>
+                    <i class="fab fa-cc-visa fa-2x mx-1"></i>
+                    <i class="fab fa-cc-mastercard fa-2x mx-1"></i>
+                    <i class="fab fa-cc-amex fa-2x mx-1"></i>
+                    <i class="fab fa-cc-paypal fa-2x mx-1"></i>
+                </div>
+                <p class="mt-2 mb-0 text-center text-md-end" style="font-size: 0.875rem; color: #0056b3; font-weight: 750;">A 501c3 Organization</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'img/logo.png' %}" alt="Centro Logo" class="logo">
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
-
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{% url 'about' %}" id="aboutDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            About
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="{% url 'about' %}" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
                         <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="{% url 'about' %}">Info</a></li>
                             <li><a class="dropdown-item" href="{% url 'team' %}">Team</a></li>
                         </ul>
                     </li>
-
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Programs & Initiatives
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Programs & Initiatives</a>
                         <ul class="dropdown-menu" aria-labelledby="programsDropdown">
                             <li><a class="dropdown-item" href="{% url 'food' %}">Food Pantry</a></li>
                             <li><a class="dropdown-item" href="{% url 'community' %}">Community Support Services</a></li>
@@ -109,42 +318,34 @@
                             <li><a class="dropdown-item" href="{% url 'rebuild' %}">Rebuilding Futures</a></li>
                         </ul>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'donate' %}">Get Involved</a>
                     </li>
-
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            News & Events
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">News & Events</a>
                         <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                            <li><a class="dropdown-item" href="{% url 'news' %}">Media</a></li>
                             <li><a class="dropdown-item" href="{% url 'calendar' %}">Calendar</a></li>
                         </ul>
                     </li>
-
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Contact
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</a>
                         <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                            <li><a class="dropdown-item" href="{% url 'contact' %}">Contact Info</a></li>
                             <li><a class="dropdown-item" href="{% url 'careers' %}">Careers</a></li>
                             <li><a class="dropdown-item" href="{% url 'members' %}">Members</a></li>
                             <li><a class="dropdown-item" href="{% url 'privacy' %}">Privacy Policy</a></li>
                             <li><a class="dropdown-item" href="{% url 'terms' %}">Terms of Use</a></li>
                         </ul>
                     </li>
-
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="formsDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Forms
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="formsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Forms</a>
                         <ul class="dropdown-menu" aria-labelledby="formsDropdown">
+                            <li><a class="dropdown-item" href="{% url 'forms' %}">More Info</a></li>
                             <li><a class="dropdown-item" href="{% url 'compliance' %}">Compliance Forms</a></li>
                             <li><a class="dropdown-item" href="{% url 'referral' %}">General Referral</a></li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -155,12 +356,79 @@
         {% endblock %}
     </div>
 
-    <footer class="footer bg-light py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2024 Centro Non-Profit. All rights reserved.</p>
+    <footer class="footer bg-light py-5">
+        <div class="container">
+            <div class="row justify-content-between align-items-start">
+                <div class="col-lg-2 col-md-6 text-center mb-4">
+                    <div class="footer-section">
+                        <img src="{% static 'img/logo1.png' %}" alt="Centro Logo" class="img-fluid mb-3" style="margin-top: 20px;">
+                        <img src="{% static 'img/EEO-Logo.png' %}" alt="EEO Logo" class="img-fluid eeo-logo mb-3">
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 text-center mb-4">
+                    <div class="footer-section d-flex align-items-center justify-content-center">
+                        <h5 class="footer-title">VISION</h5>
+                    </div>
+                    <br>
+                    <p class="footer-text">To create a fully-integrated multi-cultural, multi-linguistic health and human services delivery system, while developing long-term economic strength and sustainability.</p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 text-center mb-4">
+                    <div class="footer-section d-flex align-items-center justify-content-center">
+                        <h5 class="footer-title">MISSION</h5>
+                    </div>
+                    <br>
+                    <p class="footer-text">To assist individuals and families seeking to achieve self-sufficiency build purposeful lives through our unique mix of comprehensive integrated services, exceptional care, and an unequalled cultural and linguistic competence.</p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 text-center mb-4">
+                    <div class="footer-section d-flex align-items-center justify-content-center">
+                        <h5 class="footer-title">CONTACT</h5>
+                    </div>
+                    <br>
+                    <p class="footer-text">11 SYCAMORE ST<br> Worcester MA 01608<br> info@centroinc.org<br> (508) 798-1900</p>
+                    <a href="{% url 'careers' %}" class="footer-link d-block">Careers</a>
+                    <a href="{% url 'careers' %}" class="footer-link d-block">Volunteer</a>
+                    <a href="{% url 'donate' %}" class="footer-link d-block">Donate</a>
+                </div>
+
+                <div class="col-lg-2 col-md-6 text-center mb-4">
+                    <div class="footer-section">
+                        <h5 class="footer-title">SUBSCRIBE</h5>
+                        <br>
+                        <p>Connect with Centro via email and be up to date on all of our media and news.</p>
+                        <form action="#" method="POST">
+                            <input type="text" class="form-control mb-2" placeholder="Full Name*" required>
+                            <input type="email" class="form-control mb-2" placeholder="Email*" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    <p style="font-size: 14px;">&copy; 2022 All Rights Reserved - CENTRO INC of Worcester Massachusetts a 501c3 Non-Profit Group</p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <a href="{% url 'privacy' %}" class="footer-link">Privacy Policy</a> |
+                    <a href="{% url 'terms' %}" class="footer-link">Terms of Use</a> |
+                    <a href="{% url 'about' %}" class="footer-link">Sitemap</a> |
+                    <a href="https://www.facebook.com/CentroWorcester/" target="_blank" class="footer-link">Facebook</a> |
+                    <a href="https://www.instagram.com/centroworcester/" target="_blank" class="footer-link">Instagram</a> |
+                    <a href="https://www.youtube.com/@centroinc.312?app=desktop" target="_blank" class="footer-link">YouTube</a> |
+                    <a href="https://x.com/centroworcester?lang=en" target="_blank" class="footer-link">X</a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

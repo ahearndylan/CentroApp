@@ -80,3 +80,9 @@ def nacdc(request):
 
 def rebuild(request):
     return render(request, 'programs/rebuild.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def forms(request):
+    return render(request, 'forms.html')
