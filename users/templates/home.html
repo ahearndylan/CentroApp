@@ -5,6 +5,330 @@
 
 {% block content %}
 
-<!--Content-->   
- 
+<section>
+    <!--Images-->
+</section>
+
+<section>
+    <!--News-->
+</section>
+
+<section class="partners-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #0066cc; font-size: 1.5rem;">SPECIAL THANKS TO OUR PARTNERS, ASSOCIATES & FRIENDS</h2>
+        <p class="text-center" style="font-size: 1rem; color: #333;">We value your help throughout the years.</p>
+        <div class="row justify-content-around text-center align-items-center">
+            <!-- Partner 1 -->
+            <div class="col-6 col-md-2 mb-4">
+                <img src="{% static 'img/partner4.jpeg' %}" alt="Partner 1" class="img-fluid" style="max-height: 120px;">
+            </div>
+            <!-- Partner 2 -->
+            <div class="col-6 col-md-2 mb-4">
+                <img src="{% static 'img/partner3.png' %}" alt="Partner 2" class="img-fluid" style="max-height: 120px;">
+            </div>
+            <!-- Partner 3 -->
+            <div class="col-6 col-md-2 mb-4">
+                <img src="{% static 'img/partner5.png' %}" alt="Partner 3" class="img-fluid" style="max-height: 120px;">
+            </div>
+            <!-- Partner 4 -->
+            <div class="col-6 col-md-2 mb-4">
+                <img src="{% static 'img/partner2.png' %}" alt="Partner 4" class="img-fluid" style="max-height: 120px;">
+            </div>
+            <!-- Partner 5 -->
+            <div class="col-6 col-md-2 mb-4">
+                <img src="{% static 'img/partner1.jpeg' %}" alt="Partner 5" class="img-fluid" style="max-height: 120px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="expanding-our-reach py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Image on the Left -->
+            <div class="col-md-6">
+                <img src="{% static 'img/homepage5.png' %}" alt="Expanding Our Reach" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="p-5" style="background-color: #f7f9fc; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+                    <h2 class="mb-3" style="font-size: 2.5rem; font-weight: bold; color: #0066cc;">EXPANDING OUR REACH</h2>
+                    <p class="text-center mb-3" style="font-size: 1.25rem; font-weight: 600; color: #e7833c;">
+                        Servicing much more than just Latinos
+                    </p>
+                    <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                        CENTRO has undergone a tremendous transformation during the past 10 years, and it is no longer the neighborhood center that many Latino families grew up knowing. Thankfully, we are much more able to meet many of the social, behavioral, and health-related needs of our community than ever before. Originally founded in 1977 as Centro Communal Hispano by a group of community activists to serve Puerto Ricans, CENTRO was founded by volunteers.
+                    </p>
+                    <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                        CENTRO’s mission and the community it serves has evolved, as the make-up of Worcester’s population has changed. Today, we proudly serve individuals and families from North, Central, and South America, as well as people from countries across Africa, Southeast Asia, and the Middle East.
+                    </p>
+                    <div class="text-center">
+                        <a href="{% url 'food' %}" class="btn btn-primary custom-btn mt-4 px-4 py-2">Programs &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="expanding-our-reach py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="p-5" style="background-color: #f7f9fc; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+                    <h2 class="mb-3" style="font-size: 2.5rem; font-weight: bold; color: #0066cc;">OUR PURPOSE</h2>
+                    <p class="text-center mb-3" style="font-size: 1.25rem; font-weight: 600; color: #e7833c;">
+                        A commitment to excellence, integrity, personal accountability, collaboration, respect, dignity and compassion.
+                    </p>
+                    <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                        We achieve our mission, by providing culturally and linguistically competent case management, community-based, social, behavioral, mental health, and health-related services; while preserving and sharing our diverse cultural values and experiences.
+                    </p>
+                    <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                        This is possible by establishing a strong bond with our clients and the communities we serve and leveraging partnerships and collaborations with other providers, colleges, universities, hospitals, government entities, and other institutions.
+                    </p>
+                    <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                        Our employees are committed to their clients first, then, their colleagues, and finally our institution.
+                    </p>
+                    <div class="text-center">
+                        <a href="{% url 'about' %}" class="btn btn-primary custom-btn mt-4 px-4 py-2">Learn More &gt;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/homepage6.png' %}" alt="Our Purpose" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="video-gallery-section py-5">
+    <div class="container">
+        <h4 class="text-center mb-4" style="color: #0066cc; font-size: 1.8rem;">VIDEO SEGMENTS VIA OUR YOUTUBE CHANNEL</h4>
+        
+        <div class="video-gallery-wrapper" style="overflow-x: auto; white-space: nowrap; scroll-behavior: smooth;">
+            
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=3rTVJY9_V74" target="_blank">
+                        <img src="{% static 'img/thumbnail1.jpg' %}" alt="Video 1" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">Caregiver Appreciation</p>
+                    <p style="font-size: 0.875rem; color: #888;">**Please note that we do not own the rights to the music used during this event**</p>
+                </div>
+            </div>
+
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=MC-rbrUdAa8" target="_blank">
+                        <img src="{% static 'img/thumbnail2.jpg' %}" alt="Video 2" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">Worcester's Latin American Festival - Live!</p>
+                    <p style="font-size: 0.875rem; color: #888;">Powered by Restream https://restream.io/ Worcester's Latin American Festival - Live!</p>
+                </div>
+            </div>
+
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=p0OaVeSGsX4" target="_blank">
+                        <img src="{% static 'img/thumbnail3.jpg' %}" alt="Video 3" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">Worcester's Latin American Festival - Live!</p>
+                    <p style="font-size: 0.875rem; color: #888;">Enjoy Worcester's 29.5 Latin American Festival of 2021, brought to you by CENTRO. Broadcasting live from Worcester, MA & Puerto Rico.</p>
+                </div>
+            </div>
+
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=6ms7M46hZww" target="_blank">
+                        <img src="{% static 'img/thumbnail7.jpg' %}" alt="Video 7" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">Live with Restream</p>
+                </div>
+            </div>
+
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=0tBmGmB_kvg" target="_blank">
+                        <img src="{% static 'img/thumbnail4.jpg' %}" alt="Video 4" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">Festival Latino Americano 29.5 de Worcester Preview</p>
+                    <p style="font-size: 0.875rem; color: #888;">Worcester's 29.5 Latin American Festival Watch it LIVE on Youtube, Facebook, or at WCCA TV - Spectrum Ch. 149!</p>
+                </div>
+            </div>
+
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=j7niKjHFQeI" target="_blank">
+                        <img src="{% static 'img/thumbnail5.jpg' %}" alt="Video 5" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">Latin American Festival 2019</p>
+                </div>
+            </div>
+
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=NsvAar9BdsQ" target="_blank">
+                        <img src="{% static 'img/thumbnail6.jpg' %}" alt="Video 6" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">Hurrican Evacuees Find Work Opportunities at WOrcester Job Fair</p>
+                    <p style="font-size: 0.875rem; color: #888;">By George Barnes Telegram & Gazette Staff Hurricane victims from Puerto Rico found a little hope Wednesday at a job fair at Centro Inc. social services agency on Sycamore Street.</p>
+                </div>
+            </div>
+
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=Z3yNt3wRmyc" target="_blank">
+                        <img src="{% static 'img/thumbnail8.jpg' %}" alt="Video 8" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">WNT Main South Revitalization Project Janurary 23rd, 2018</p>
+                    <p style="font-size: 0.875rem; color: #888;">CENTRO Inc. is asking the City of Worcester to help a Main Street neighborhood.</p>
+                </div>
+            </div>
+
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=pbQL4Lr-V1g" target="_blank">
+                        <img src="{% static 'img/thumbnail10.jpg' %}" alt="Video 10" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">Programa Intensivo de Acogimiento Familiar</p>
+                    <p style="font-size: 0.875rem; color: #888;">El Programa Intensivo de Acogimiento Familiar (IFC) conecta jóvenes con necesidades especiales con casas de acogida entrenadas que ofrecen un ambiente seguro, fortaleciente, y compasivo.</p>
+                </div>
+            </div>
+
+            <div class="video-item-container text-center" style="display: inline-block; width: 300px; margin-right: 10px;">
+                <div class="video-item position-relative">
+                    <a href="https://www.youtube.com/watch?v=Fx0PxJdyPr4" target="_blank">
+                        <img src="{% static 'img/thumbnail9.jpg' %}" alt="Video 9" class="img-fluid rounded" style="width: 100%;">
+                        <div class="play-button btn btn-light rounded-circle p-0 position-absolute d-flex justify-content-center align-items-center" 
+                            style="width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play text-dark" style="font-size: 20px;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="video-description mt-2">
+                    <p class="mb-1" style="font-weight: bold; color: #333;">Centro Inc.</p>
+                    <p class="mb-1" style="color: #0066cc;">Intensive Foster Care Program (EN)</p>
+                    <p style="font-size: 0.875rem; color: #888;">Parents address the challenges of achieving a more productive, healthy family life. Intensive Foster Care is a family based service delivery approach that provides individualized treatment planning and support to children with special needs.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div>
+    <h2 style="color: #0066cc; text-align: center;">EXPLORE OUR WORLD</h2>
+    <p style="text-align: center;">
+        Take a glimpse into our Instagram feed. Here, we showcase our best moments and share a visual story of our journey.
+    </p>
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-c866432a-5d24-420a-86f6-3926b45d98db" data-elfsight-app-lazy></div>
+</div>
+
+
+
+<style>
+    .custom-btn {
+        background-color: #e74c3c; /* Red background */
+        border-color: #e74c3c; /* Red border */
+    }
+
+    .custom-btn:hover {
+        background-color: #0066cc !important;
+        border-color: #0066cc !important;
+    }
+
+    .video-item-container {
+    width: 300px; 
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center; 
+    vertical-align: top;
+    box-sizing: border-box; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+}
+
+.video-description {
+    width: 100%;
+    max-width: 100%; 
+    word-wrap: break-word; 
+    white-space: normal; 
+    display: block; 
+}
+
+.description-note {
+    font-size: 0.875rem; 
+    color: #888;
+    white-space: normal; 
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    width: 100%; 
+}
+
+
+</style>
+
 {% endblock %}
