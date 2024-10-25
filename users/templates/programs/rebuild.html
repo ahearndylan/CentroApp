@@ -2,11 +2,238 @@
 {% load static %}
 
 {% block title %}
-<!--Add page title here-->
+Rebuilding Futures
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
 
+<h2 class="text-center title-heading">REBUILDING FUTURES</h2>
+
+<div class="text-center mt-3">
+    <a href="{% url 'financial' %}" class="section-link">What We Offer</a>
 </div>
+
+<style>
+
+    .section-link {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #0056b3;
+        text-decoration: none;
+        padding: 10px;
+        border-bottom: 2px solid #007bff;
+        transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    }
+
+    .section-link:hover {
+        color: #007bff;
+        border-bottom-color: #0056b3;
+    }
+
+    .title-heading {
+        color: #ffffff;
+        background-color: #8CB7E0;
+        padding: 20px;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .image-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+    }
+    .image-section img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-content {
+        background-color: #ffffff;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        border-left: 5px solid #0056b3;
+        max-width: 800px;
+        margin: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonial-content:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    .blockquote {
+        font-size: 1.3rem;
+        color: #333333;
+        font-style: italic;
+        position: relative;
+        padding: 0 20px;
+    }
+    .blockquote::before {
+        content: open-quote;
+        font-size: 2rem;
+        color: #0056b3;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+    }
+    .blockquote::after {
+        content: close-quote;
+        font-size: 2rem;
+        color: #0056b3;
+        position: absolute;
+        right: -10px;
+        bottom: -10px;
+    }
+    .blockquote-footer {
+        margin-top: 15px;
+        color: #6c757d;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .owl-nav button {
+        background-color: #007bff;
+        border: none;
+        color: #ffffff;
+        font-size: 1.5rem;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        transition: background 0.3s ease, transform 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .owl-nav button.owl-prev {
+        left: -30px; 
+    }
+    .owl-nav button.owl-next {
+        right: -30px; 
+    }
+
+    .owl-nav button:hover {
+        background-color: #0056b3;
+    }
+    .owl-nav button:focus {
+        outline: none;
+    }
+    
+    /* Arrow Icon Adjustment */
+    .owl-nav button::before {
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+    .owl-dots {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .owl-dot {
+        height: 12px;
+        width: 12px;
+        margin: 5px;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: #d1d3d4;
+        transition: background-color 0.3s ease;
+    }
+    .owl-dot.active {
+        background-color: #007bff;
+    }
+
+    
+</style>
+
+<div class="container image-section">
+    <img src="{% static 'img/rebuilding.jpg' %}" alt="Rebuilding Futures" class="img-fluid">
+</div>
+
+<br>
+
+<div class="container mt-5">
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <div class="testimonial-content text-center">
+                <blockquote class="blockquote">
+                    <p class="mb-0">I recently completed Centro Inc's Financial Empowerment classes, and I can't express how grateful I am for the knowledge and support I received. The coaches were professional, understanding, and knowledgeable. These classes have truly transformed my financial life, and I highly recommend them to anyone seeking financial stability and growth!</p>
+                </blockquote>
+                <footer class="blockquote-footer">Robb Walters</footer>
+            </div>
+        </div>
+        <div class="item">
+            <div class="testimonial-content text-center">
+                <blockquote class="blockquote">
+                    <p class="mb-0">La Iniciativa de Empoderamiento Financiero de Centro Inc. ha sido un punto de inflexión para mí y mi familia. Las clases fueron atractivas e informativas, cubriendo temas cruciales como presupuestar y gestionar deudas. Con la ayuda de mi entrenador financiero personal, he podido establecer metas realistas y lograr un progreso significativo para alcanzarlas. ¡No puedo agradecer lo suficiente a Centro Inc. por su increíble programa!</p>
+                </blockquote>
+                <footer class="blockquote-footer">Rosa Gomez</footer>
+            </div>
+        </div>
+        <div class="item">
+            <div class="testimonial-content text-center">
+                <blockquote class="blockquote">
+                    <p class="mb-0">Centro Inc's Financial Empowerment Initiative has been a game-changer for me and my family. The classes were engaging and informative, covering crucial topics like budgeting and debt management. With the help of my personal financial coach, I've been able to set realistic goals and make significant progress towards achieving them. I can't thank Centro Inc. enough for their incredible program!</p>
+                </blockquote>
+                <footer class="blockquote-footer">Jane Bazz</footer>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="testimonial-content text-center">
+                <blockquote class="blockquote">
+                    <p class="mb-0">
+                        Recientemente completé las clases de Empoderamiento Financiero de Centro Inc. y no puedo expresar cuán agradecido estoy por el conocimiento y apoyo que recibí. Los entrenadores fueron profesionales, comprensivos y expertos en la materia. ¡Estas clases realmente han transformado mi vida financiera y se las recomiendo encarecidamente a cualquiera que busque estabilidad y crecimiento financiero!</p>
+                </blockquote>
+                <footer class="blockquote-footer">Javier Morales</footer>
+            </div>
+        </div>
+        <div class="item">
+            <div class="testimonial-content text-center">
+                <blockquote class="blockquote">
+                    <p class="mb-0">I can't speak highly enough about the Financial Empowerment Initiative by Centro Inc. The bilingual classes made it easy for me to understand complex financial concepts, and the one-on-one coaching sessions were invaluable. My financial future is brighter than ever, and I owe it all to the fantastic team at Centro Inc.</p>
+                </blockquote>
+                <footer class="blockquote-footer">Elinor Simon</footer>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+{% block extra_js %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: true,
+            autoplay: false,
+            responsive: {
+                0: { items: 1 },
+                600: { items: 1 },
+                1000: { items: 1 }
+            }
+        });
+    });
+</script>
+{% endblock %}
 {% endblock %}
