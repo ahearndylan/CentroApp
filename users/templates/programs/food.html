@@ -2,11 +2,99 @@
 {% load static %}
 
 {% block title %}
-<!--Add page title here-->
+    CENTRO Food Pantry & Services
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-7 font-weight-bold" style="color: #0056b3;">CENTRO's Food Pantry and Food Services</h1>
+    </div>
 
+<div class="row gy-4">
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 p-4 h-100">
+            <h3 class="text-primary mb-3"><i class="fas fa-info-circle me-2"></i>CENTRO Operates the Second Largest Food Pantry in Worcester</h3>
+            <div class="text-center mb-3">
+                <img src="{% static 'img/foodpantry.jpg' %}" class="img-fluid rounded" alt="Food Pantry">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 p-4 h-100">
+            <h3 class="text-primary mb-3">Emergency Food Services</h3>
+            <p class="text-muted">
+                Our Emergency Food Pantry Services provide Worcester area residents with essential food provisions to reduce hunger and promote self-reliance. We distribute quality food provisions and offer referrals to other supportive services and programs.
+            </p>
+            <hr class="my-3">
+            <p class="text-muted">
+                In 2016, we served 22,550 individuals and 8,463 households, which is over 10% of Worcester’s population. This represents an increase of nearly 600 individuals compared to 2015, with close to 400,000 pounds of food distributed to families in need.
+            </p>
+            <hr class="my-3">
+            <p class="text-muted">
+                CENTRO’s food pantry collaborates with the Worcester County Food Bank and other area pantries to address the growing issue of food insecurity. Although 83% of those served are Latino, we welcome all area residents in need. Our professional staff and volunteers ensure that everyone who visits receives service with respect and dignity.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="card shadow-lg border-0 p-4">
+            <h3 class="text-primary mb-3"><i class="fas fa-map-marker-alt me-2"></i>Locations & Hours</h3>
+            <ul class="list-unstyled text-muted">
+                <li class="mb-4">
+                    <strong>CENTRO Food Pantry and Community Service Center</strong><br>
+                    11 Sycamore Street, Worcester, MA 01608<br>
+                    <i class="far fa-calendar-alt me-2"></i>Monday & Wednesday: 9:00 AM – 1:00 PM
+                </li>
+                <li>
+                    <strong>Great Brook Valley</strong><br>
+                    176 Tacoma Street, Worcester, MA 01605<br>
+                    <i class="far fa-calendar-alt me-2"></i>Tuesday: 8:30 AM – 12:00 PM
+                </li>
+            </ul>
+            <p class="text-muted small mt-3">
+                <span><i class="fas fa-exclamation-circle me-2"></i>This program assists low-income families with emergency food.</span><br>
+                There is no requirement of ID or proof of residency requested in order to get food.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="card shadow-lg border-0 p-4">
+            <h3 class="text-primary"><i class="fas fa-hand-holding-usd me-2"></i>Funding and Sponsors</h3>
+            <p class="text-muted">
+                Our food services are funded by the City of Worcester’s Community Development Block Grant, Project Bread, and the Worcester County Food Bank, allowing us to provide vital services to those in need.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="card shadow-lg border-0 p-4">
+            <h3 class="text-primary"><i class="fas fa-phone-alt me-2"></i>Contact Us</h3>
+            <p class="text-muted">
+                For more information or to register for our food pantry services, please contact CENTRO at:
+                <a href="tel:+15087981900" class="text-primary font-weight-bold">508-798-1900</a>.
+            </p>
+        </div>
+    </div>
 </div>
+</div>
+
+<style>
+    .text-primary {
+        color: #2c3e50 !important;
+    }
+    .card {
+        border-radius: 10px !important;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .card:hover {
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-4px);
+    }
+    .lead {
+        font-size: 1.25rem;
+    }
+</style>
 {% endblock %}

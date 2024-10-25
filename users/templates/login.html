@@ -1,11 +1,28 @@
-<h3>Login</h3>
+{% extends "base.html" %}
 
-<form action="" method="POST">
-   {% csrf_token %}
-   {% for field in form %}
-       <p>{{ field.label }}: <br> {{ field }}</p>
-   {% endfor %}
-   <button type="submit">Login</button>
-</form>
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="height: 70vh;"> <!-- Adjusted height to move up -->
+    <div class="col-md-5 col-lg-4">
+        <div class="card shadow border-0"> <!-- Border removed for cleaner look -->
+            <div class="card-body p-4"> <!-- Adjusted padding for card content -->
+                <h3 class="text-center mb-4">Login</h3>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="mb-3"> <!-- Slightly increased spacing for better readability -->
+                            <label class="form-label text-muted">{{ field.label }}</label>
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary w-100">Login</button> <!-- Centered, full-width button -->
+                </form>
+                <p class="text-center mt-3 mb-0"> <!-- Centered text with reduced margins -->
+                    Don't have an account? 
+                    <a href="{% url 'register' %}" class="text-decoration-none">Signup here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>Don't have an account? <a href="{% url 'register' %}">Signup here</a></p>
+{% endblock %}
