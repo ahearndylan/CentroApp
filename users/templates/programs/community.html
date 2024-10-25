@@ -2,11 +2,138 @@
 {% load static %}
 
 {% block title %}
-<!--Add page title here-->
+    Community Support Services (CSS)
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container my-5">
+    <!-- Hero Section with Image Background -->
+    <div class="row align-items-center mb-5 bg-light shadow-sm rounded p-4">
+        <div class="col-md-6 order-md-2 text-center">
+            <img src="{% static 'img/banner.jpg' %}" alt="Community Support Services" class="img-fluid rounded shadow-sm" style="max-height: 300px; object-fit: cover;">
+        </div>
+        <div class="col-md-6 order-md-1 text-center text-md-start">
+            <h1 class="display-6 text-primary fw-bold">Community Support Services</h1>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="mb-5">
+        <div class="text-center">
+            <p class="text-muted mx-auto" style="max-width: 800px;">
+                <strong>Community Support Services (CSS)</strong> is geared towards assisting low-income residents with case management services, citizenship, residency affairs, translations, and other community support services that CENTRO has to offer. By providing these services to low-income residents, we hope to reduce their dependency on government funded public services, while also helping them attain self-sufficiency
+            </p>
+        </div>
+    </section>
+
+
+    <section class="mb-5 bg-light py-5">
+    <div class="container">
+        <h2 class="text-center text-primary fw-bold mb-4">Our Services</h2>
+        <div class="row text-center">
+            <!-- First Row -->
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-hands-helping fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">Case Management Services</h5>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-globe fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">Translation & Notary Services</h5>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-id-card fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">Citizenship Assistance</h5>
+            </div>
+            
+            <!-- Second Row -->
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-passport fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">Permanent Resident Renewal</h5>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-file-alt fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">Deferred Action</h5>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-utensils fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">EBT & WIC Applications</h5>
+            </div>
+            
+            <!-- Third Row -->
+            <div class="col-md-4"></div> <!-- Empty column for left spacing -->
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-child fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">Child Support Cases</h5>
+            </div>
+            <div class="col-md-4"></div> <!-- Empty column for right spacing -->
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <p class="text-muted fst-italic">
+                    Through consumer protection and advocacy, clients are treated with respect and dignity. 
+                    Through these programs, we serve well over 500 individuals every year.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- Funding and Sponsors Section -->
+    <section class="mb-5">
+        <div class="text-center">
+            <h2 class="text-primary fw-bold">Funding & Sponsors</h2>
+            <p class="text-muted mx-auto" style="max-width: 800px;">
+                Our programs are fully funded by the CDBG grant through the City of Worcester.
+            </p>
+        </div>
+    </section>
+
+    <section class="mb-5 bg-light py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Centered Text Section -->
+                <div class="col-md-8 text-center">
+                    <h3 class="text-primary fw-bold">Contact Information</h3>
+                    <p class="text-muted">For more information on this program or to register as a volunteer, please contact:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <h5 class="fw-bold mb-1">Yokasta Lopez</h5>
+                            <span class="text-muted">Community Support Coordinator</span>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone-alt me-2 text-success"></i>
+                            <span class="fw-bold">Phone:</span> 
+                            <a href="tel:+15087981900" class="text-decoration-none text-primary">508-798-1900 Ext 260</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2 text-success"></i>
+                            <span class="fw-bold">Email:</span>
+                            <a href="mailto:ylopez@centroinc.org" class="text-decoration-none text-primary">ylopez@centroinc.org</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </div>
+
+<!-- Optional Styling -->
+<style>
+    .text-primary {
+        color: #0056b3 !important;
+    }
+    .text-success {
+        color: #2c3e50 !important;
+    }
+    .lead {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+    .fw-bold {
+        font-weight: 600;
+    }
+</style>
 {% endblock %}
