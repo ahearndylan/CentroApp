@@ -1,12 +1,263 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-<!--Add page title here-->
-{% endblock %}
-
 {% block content %}
-<div class="container mt-5">
+<h2 class="text-center title-heading">
+    HOMEOWNERSHIP
+</h2>
 
-</div>
+<section class="container my-5">
+    <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4 d-flex flex-column align-items-center">
+            <img src="{% static 'img/home6.jpg' %}" alt="Housing Counselors" class="img-fluid rounded shadow-sm mb-3 img-stacked">
+            <img src="{% static 'img/home1.jpg' %}" alt="Home Buying Assistance" class="img-fluid rounded shadow-sm img-stacked">
+        </div>
+        <div class="col-lg-8 col-md-12 text-section shadow p-4 rounded">
+            <h3 class="font-weight-bold mb-4">Housing Counselors</h3>
+            <p>
+                Welcome to your journey towards financial empowerment. Our mission is to provide comprehensive financial education and resources to help individuals and families achieve their financial goals. We offer a range of courses and services designed to empower our community and promote financial stability.
+            </p>
+            <h3 class="font-weight-bold mt-4 mb-4">Buy Your Home</h3>
+            <ul class="list-unstyled">
+                <li class="mb-3">
+                    <i class="fas fa-home"></i> 
+                    <strong>Pre-Purchase Counseling:</strong> One-on-one sessions tailored to unique circumstances
+                </li>
+                <li class="mb-3">
+                    <i class="fas fa-home"></i> 
+                    <strong>First-Time Homebuyer Classes:</strong> In-person and online classes covering homeownership basics
+                </li>
+                <li class="mb-3">
+                    <i class="fas fa-home"></i> 
+                    <strong>Down Payment Assistance:</strong> Support for first-time homebuyers purchasing a new home
+                </li>
+                <li class="mb-3">
+                    <i class="fas fa-home"></i> 
+                    <strong>Assistance in budgeting:</strong> Debt management, credit counseling, first-time homebuyer guidance, 
+                    foreclosure default counseling, subsidy applications, and eviction avoidance
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 text-section shadow p-4 rounded">
+            <h3 class="font-weight-bold mb-4">Maintain Your Home</h3>
+            <ul class="list-unstyled">
+                <li class="mb-3">
+                    <i class="fas fa-home"></i> 
+                    <strong>Post-Purchase Coaching:</strong> Personalized sessions for staying on track after a home purchase
+                </li>
+                <li class="mb-3">
+                    <i class="fas fa-home"></i> 
+                    <strong>Home Safety:</strong> Information on programs available to help improve home safety and health
+                </li>
+                <li class="mb-3">
+                    <i class="fas fa-home"></i> 
+                    <strong>Home Improvement:</strong> Guidance on addressing emergency repairs, major system repairs, and more
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-4 d-flex flex-column align-items-center">
+            <img src="{% static 'img/home7.jpg' %}" alt="Home Improvement" class="img-fluid rounded shadow-sm img-stacked">
+        </div>
+    </div>
+</section>
+
+<section class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 text-section shadow p-4 rounded">
+            <h3 class="font-weight-bold mb-4">Keep Your Home</h3>
+            <ul class="list-unstyled">
+                <li class="mb-3 d-flex align-items-start">
+                    <div class="me-3">
+                        <i class="fas fa-sync-alt fa-2x text-primary"></i>
+                    </div>
+                    <div>
+                        <strong>Foreclosure Counseling:</strong> Assistance for those behind or concerned about falling behind on their mortgage.
+                    </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                    <div class="me-3">
+                        <i class="fas fa-sync-alt fa-2x text-primary"></i>
+                    </div>
+                    <div>
+                        <strong>Post Loan Modification Coaching:</strong> Support in moving forward after a successful loan modification.
+                    </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                    <div class="me-3">
+                        <i class="fas fa-sync-alt fa-2x text-primary"></i>
+                    </div>
+                    <div>
+                        <strong>Tenant Rights and Responsibilities:</strong> Education on tenants' rights and responsibilities for a stable living situation.
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-4 d-flex justify-content-center align-items-center"> 
+            <img src="{% static 'img/home2.png' %}" alt="Housing Support" class="img-fluid rounded shadow-sm keep-home-img">
+        </div>
+    </div>
+</section>
+
+
+<section class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 text-section shadow p-4 rounded"> 
+            <h3 class="font-weight-bold mb-4">Financial Coaching</h3>
+            <ul class="list-unstyled">
+                <li class="mb-3 d-flex align-items-start">
+                    <div class="me-3">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div>
+                        <strong>Financial Empowerment:</strong> Customized program to empower families and individuals in achieving their financial goals.
+                    </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                    <div class="me-3">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div>
+                        <strong>Venture Start-Up and Growth:</strong> Support for aspiring entrepreneurs and small business owners through tailored classes.
+                    </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                    <div class="me-3">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div>
+                        <strong>Housing Counseling:</strong> Assistance in budgeting, debt management, credit counseling, and eviction avoidance.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center align-items-center text-center shadow p-4 rounded">
+            <h3 class="font-weight-bold mb-4" style="color: #f39c86;">To speak with one of our Housing Counselors,</h3>
+            <p class="lead" style="color: #0056b3; font-weight: bold;">
+                Call <a href="tel:508-798-1900" style="text-decoration: underline; color: #0056b3;">508-798-1900</a>
+            </p>
+            <p class="lead" style="color: #000; font-weight: bold;">or</p>
+            <p class="lead" style="color: #f39c86; font-weight: bold;">
+                Email <a href="mailto:homeowner@centroinc.org" style="text-decoration: underline; color: #0056b3;">homeowner@centroinc.org</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+            <img src="{% static 'img/home3.png' %}" alt="Home Image 1" class="img-fluid rounded shadow-sm gallery-img mx-2">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+            <img src="{% static 'img/home4.png' %}" alt="Home Image 2" class="img-fluid rounded shadow-sm gallery-img mx-2">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+            <img src="{% static 'img/home5.png' %}" alt="Home Image 3" class="img-fluid rounded shadow-sm gallery-img mx-2">
+        </div>
+    </div>
+</section>
+
+<style>
+
+    .gallery-img {
+        max-width: 95%; 
+        height: auto; 
+        border-radius: 15px; 
+    }
+
+    .mx-2 {
+        margin-left: 8px; 
+        margin-right: 8px; 
+    }
+
+    .keep-home-img {
+        max-width: 100%; 
+        height: auto; 
+        max-height: 350px;
+        object-fit: cover; 
+        border-radius: 10px;
+    }
+
+    .text-section h3 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #0056b3;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    ul li i.fas {
+        margin-right: 15px;
+        color: #0056b3 !important; 
+    }
+
+    .img-stacked {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .title-heading {
+        color: #ffffff;
+        background-color: #8CB7E0;
+        padding: 20px;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-section {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        padding: 30px;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .text-section h3 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #0056b3;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    ul li i.fas {
+        margin-right: 10px;
+        color: #0056b3 !important; 
+    }
+
+    ul li {
+        font-size: 1.05rem;
+    }
+
+    @media (min-width: 768px) {
+        .row {
+            align-items: flex-start;
+        }
+
+        .col-lg-4 img {
+            max-height: 250px;
+        }
+    }
+</style>
 {% endblock %}

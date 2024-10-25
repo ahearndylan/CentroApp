@@ -6,21 +6,24 @@
 {% endblock %}
 
 {% block content %}
-<div class="container my-5">
-    <div class="row align-items-center mb-5 bg-light shadow-sm rounded p-4">
-        <div class="col-md-6 order-md-2 text-center">
-            <img src="{% static 'img/banner.jpg' %}" alt="Community Support Services" class="img-fluid rounded shadow-sm" style="max-height: 300px; object-fit: cover;">
-        </div>
-        <div class="col-md-6 order-md-1 text-center text-md-start">
-            <h1 class="display-6 text-primary fw-bold">Community Support Services</h1>
-        </div>
-    </div>
+
+    <h2 class="text-center title-heading">
+        COMMUNITY SUPPORT SERVICES
+    </h2>
 
     <section class="mb-5">
-        <div class="text-center">
-            <p class="text-muted mx-auto" style="max-width: 800px;">
-                <strong>Community Support Services (CSS)</strong> is geared towards assisting low-income residents with case management services, citizenship, residency affairs, translations, and other community support services that CENTRO has to offer. By providing these services to low-income residents, we hope to reduce their dependency on government funded public services, while also helping them attain self-sufficiency
-            </p>
+        <div class="row align-items-center">
+            <!-- Image on the Left for Medium and Up -->
+            <div class="col-md-6 order-md-1 text-center text-md-start">
+                <img src="{% static 'img/banner.jpg' %}" alt="Community Support Services" class="img-fluid rounded shadow-sm" style="max-height: 300px; object-fit: cover;">
+            </div>
+
+            <!-- Text on the Right for Medium and Up -->
+            <div class="col-md-6 order-md-2">
+                <p class="text-muted mx-auto" style="max-width: 800px;">
+                    <strong>Community Support Services (CSS)</strong> is geared towards assisting low-income residents with case management services, citizenship, residency affairs, translations, and other community support services that CENTRO has to offer. By providing these services to low-income residents, we hope to reduce their dependency on government-funded public services, while also helping them attain self-sufficiency.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -128,5 +131,17 @@
     .fw-bold {
         font-weight: 600;
     }
+
+    .title-heading {
+    color: #ffffff;
+    background-color: #8CB7E0;
+    padding: 20px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 </style>
 {% endblock %}
