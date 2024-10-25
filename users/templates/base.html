@@ -7,16 +7,8 @@
     {% load static %}
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
     <link rel="icon" type="image/x-icon" href="{% static 'favicon_io/favicon.ico' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
@@ -25,55 +17,154 @@
     <title>{% block title %}Centro Non-Profit{% endblock %}</title>
 
     <style>
-        .dropdown:hover .dropdown-menu {
-            display: block;
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
-        .navbar {
-            height: 80px;
-            background-color: white;
-        }
-
-        .navbar-collapse {
-            z-index: 9999;
-            background-color: white;
-            padding: 20px;
-        }
-
-        .nav-item {
-            margin-bottom: 10px;
-        }
-
-        .dropdown-menu .dropdown-item {
-            font-size: 16px;
-            padding: 10px 20px;
-        }
-
-        .navbar-nav .nav-link {
-            font-weight: 500;
+        body {
+            font-family: 'Roboto', sans-serif;
             color: #333;
-            font-size: 18px;
-            padding: 15px 20px;
+        }
+        
+        .top-bar {
+            background-color: #0056b3;
+            padding: 10px 0;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar .contact-info {
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start; 
+        }
+        
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px; 
+            transition: color 0.3s;
+        }
+        
+        .top-bar a:hover {
+            color: #ffcc00;
+        }
+        
+        .top-bar .social-icons a {
+            font-size: 1.3rem;
+            margin-right: 10px; 
+            transition: color 0.3s;
+        }
+        
+        .top-bar .social-icons a:hover {
+            color: #ffcc00;
         }
 
+        .top-bar .contact-info i, 
+        .top-bar .contact-info span {
+            margin-right: 5px; 
+        }
+        
+        .top-bar .contact-info a {
+            margin-right: 10px; 
+        }
+        
+        .fas.fa-phone {
+            margin-left: 20px; 
+        }
+        
+        .fab.fa-facebook-f, .fab.fa-instagram, .fab.fa-youtube{
+            margin-right: 5px;
+        }
+        
+        .fab.fa-x-twitter{
+            margin-right: 10px;
+        }
+        
+        .navbar {
+            background-color: #ffffff;
+            padding: 1rem 0;
+            border-bottom: 3px solid #0056b3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand img {
+            max-width: 160px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #333;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: color 0.3s;
+        }
+        
         .navbar-nav .nav-link:hover {
-            color: #007bff;
+            color: #0056b3;
         }
-
-        .logo {
-            width: 150px;
+        
+        .dropdown-menu {
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        .dropdown-toggle::after {
-            display: none;
+        
+        .dropdown-menu .dropdown-item {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
         }
-
-        .top-row-icons {
+        
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        
+        .donation-btn {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .donation-btn:hover {
+            background-color: #ff9900;
+            color: white;
+        }
+        
+        .payment-icons {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
         }
-
+        
+        .payment-icons i {
+            color: #333; 
+            transition: color 0.3s;
+        }
+        
+        .payment-icons i:hover {
+            color: #0056b3;
+        }
+        
+        .org-label {
+            font-weight: bold;
+            color: white;  
+            font-size: 0.85rem; 
+            margin-left: 10px;  
+        }
+        
         .footer {
             background-color: #f8f9fa;
             color: #333;
@@ -131,30 +222,7 @@
             text-decoration: underline;
         }
 
-        .top-link {
-            color: black;
-            text-decoration: none;
-        }
-
-        .top-link:hover {
-            color: #0056b3 !important;
-            text-decoration: underline !important;
-        }
-
-        .nav-link .fa-user-circle {
-            color: #333;
-            margin-right: 10px;
-        }
-
-        .nav-link:hover .fa-user-circle {
-            color: #007bff;
-        }
-
-        .dropdown-item-text {
-            font-weight: bold;
-            padding: 10px 20px;
-        }
-
+        
         .footer-link {
             color: #333 !important;
             text-decoration: none !important;
@@ -171,6 +239,142 @@
             margin-top: 5px;
         }
 
+        .navbar-text.blurb {
+            font-size: 1rem; 
+            color: #0056b3; 
+            font-weight: bold;
+        }
+        
+        .homepageLogo{
+            margin-left: 200px;
+        }
+
+        .custom-dropdown-container {
+            position: relative;
+            z-index: 1050; 
+        }
+        
+        .custom-dropdown-toggle {
+            cursor: pointer;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+        
+        .custom-dropdown-toggle:hover {
+            color: #0056b3;
+        }
+        
+        .custom-dropdown-menu {
+            background-color: #fff; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 160px;
+            z-index: 1051; 
+            display: block;
+        }
+        
+        /* Dropdown items */
+        .custom-dropdown-item {
+            padding: 10px 15px;
+            font-size: 16px;
+            color: white; 
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .custom-dropdown-item:hover {
+            background-color: #0056b3;
+            color: white;
+            border-radius: 3px;
+        }
+        
+        .profile-dropdown-container {
+            position: relative;
+            z-index: 1050;
+        }
+
+        .fa-user-circle {
+            font-size: 2.5rem;
+        }
+        
+        .profile-dropdown-toggle {
+            cursor: pointer;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .profile-dropdown-toggle:hover {
+            color: #007bff;
+        }
+        
+        .profile-dropdown-menu {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 180px;
+            z-index: 1051;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+        
+        .profile-dropdown-item {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .profile-dropdown-item:hover {
+            background-color: #007bff;
+            color: white;
+            border-radius: 3px;
+        }
+        
+        .dropdown-item-text {
+            font-weight: bold;
+            padding: 10px 20px;
+            color: #007bff;
+        }
+        
+        .nav-link .fa-user-circle {
+            color: #333;
+            margin-right: 10px;
+        }
+        
+        .nav-link:hover .fa-user-circle {
+            color: #007bff;
+        }
+
+        @media (max-width: 992px) {
+            .top-bar .contact-info {
+                flex-direction: column; 
+                text-align: center; 
+            }
+        
+            .contact-info {
+                font-size: 0.8rem;
+            }
+        
+            .top-bar .social-icons {
+                margin-top: 10px; 
+            }
+        
+            .navbar {
+                padding: 0.75rem 0;
+            }
+        
+            .navbar-brand img {
+                max-width: 140px;
+            }
+        
+            .donation-btn {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .footer-logo {
                 margin-bottom: 10px;
@@ -184,22 +388,81 @@
                 margin-top: 10px;
             }
 
-            .dropdown .nav-link i {
-                margin-top: 40px;
+            .btn.donation-btn{
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }   
+            
+            .navbar {
+                padding: 0.5rem 0;
+                justify-content: center;
             }
-
-            .dropdown-menu {
-                position: static;
-                float: none;
-                width: 100%;
+        
+            .navbar-brand {
+                display: flex;
+                justify-content: center; 
+                width: 100%; 
             }
-
+        
+            .homepageLogo {
+                margin-left: 0; 
+                margin-right: 0; 
+                max-width: 140px; 
+            }
+        
             .navbar-collapse {
-                border-top: 1px solid #ddd;
+                justify-content: center;
             }
-
-            .navbar-nav .dropdown-toggle::after {
-                margin-left: 10px;
+        
+            .navbar-text.blurb {
+                font-size: 0.9rem;
+                text-align: center;
+                width: 100%;
+                margin: 10px 0;
+            }
+        
+            .donation-btn {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        
+            .top-bar {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+        
+            .top-bar .contact-info {
+                flex-direction: row; 
+                flex-basis: 100%; 
+                justify-content: center;
+            }
+        
+            .top-bar .social-icons {
+                flex-basis: 100%;
+                justify-content: center; 
+                margin-top: 5px;
+            }
+        
+            .top-bar .social-icons a {
+                font-size: 1.1rem;
+            }
+        
+            .dropdown .nav-link {
+                font-size: 1rem; 
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .top-bar .contact-info {
+                font-size: 0.75rem;
+            }
+        
+            .navbar-nav .nav-link {
+                padding: 5px 10px; 
+            }
+        
+            .navbar-brand img {
+                max-width: 120px;
             }
         }
     </style>
@@ -207,118 +470,78 @@
 
 <body>
 
-    <div class="container-fluid bg-light py-2">
-        <div class="row align-items-center text-center text-md-left">
-            <div class="col-md-6 col-12 mb-2 mb-md-0">
-                <div class="d-flex justify-content-center justify-content-md-start align-items-center">
-                    <div class="dropdown me-3 mt-4 mt-md-0">
-                        <a class="nav-link dropdown-toggle d-inline-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user-circle fa-2x"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                            {% if user.is_authenticated %}
+    <div class="container-fluid top-bar">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-sm-12 d-flex align-items-center contact-info">
+                <i class="fas fa-phone"></i> (123) 456-7890
+                <span class="mx-3">|</span>
+                <i class="fas fa-envelope"></i> info@centroinc.org
+                <span class="mx-3">|</span>
+                <a href="{% url 'news' %}">Newsletter</a>
+                <span class="mx-3">|</span>
+                <a href="{% url 'referral' %}">Referral Form</a>
+                <span class="mx-3">|</span>
+                <span class="org-label">A 501(c)(3) Organization</span>
+            </div>
+            
+            <div class="col-md-6 col-sm-12 d-flex justify-content-end align-items-center">
+                <div class="social-icons me-3"> 
+                    <a href="https://www.facebook.com/CentroWorcester/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/centroworcester/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@centroinc.312?app=desktop" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/centroworcester?lang=en" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            
+                <div class="dropdown profile-dropdown-container">
+                    <a class="profile-dropdown-toggle dropdown-toggle d-inline-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                    </a>
+                    <ul class="dropdown-menu profile-dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        {% if user.is_authenticated %}
                             <li><span class="dropdown-item-text">Welcome, {{ user.username }}!</span></li>
                             <li>
-                                <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+                                <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display:inline;">
                                     {% csrf_token %}
-                                    <button type="submit" class="dropdown-item">Logout</button>
+                                    <button type="submit" class="dropdown-item profile-dropdown-item">Logout</button>
                                 </form>
                             </li>
-                            {% else %}
-                            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
-                            <li><a class="dropdown-item" href="{% url 'register' %}">Signup</a></li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                    <p class="mb-0">
-                        <i class="fas fa-phone"></i> (123) 456-7890 |<br class="d-md-none">
-                        <i class="fas fa-envelope"></i> info@centroinc.org |<br class="d-md-none">
-                        <a href="{% url 'news' %}" class="top-link">Newsletter</a> |
-                        <a href="{% url 'referral' %}" class="top-link">General Referral Form</a>
-                    </p>
+                        {% else %}
+                            <li><a class="dropdown-item profile-dropdown-item" href="{% url 'login' %}">Login</a></li>
+                            <li><a class="dropdown-item profile-dropdown-item" href="{% url 'register' %}">Sign Up</a></li>
+                        {% endif %}
+                    </ul>
                 </div>
-            </div>
-
-            <div class="col-md-6 col-12 text-center text-md-right d-flex justify-content-center justify-content-md-end mt-2 mt-md-0">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item mx-2">
-                        <a class="nav-link" href="https://www.facebook.com/CentroWorcester/" target="_blank">
-                            <i class="fab fa-facebook-f fa-lg"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item mx-2">
-                        <a class="nav-link" href="https://www.instagram.com/centroworcester/" target="_blank">
-                            <i class="fab fa-instagram fa-lg"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item mx-2">
-                        <a class="nav-link" href="https://www.youtube.com/@centroinc.312?app=desktop" target="_blank">
-                            <i class="fab fa-youtube fa-lg"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item mx-2">
-                        <a class="nav-link" href="https://x.com/centroworcester?lang=en" target="_blank">
-                            <i class="fab fa-x-twitter fa-lg"></i>
-                        </a>
-                    </li>                    
-                </ul>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid bg-white py-2">
-        <div class="row align-items-center justify-content-center justify-content-md-between">
-            <div class="col-md-4 col-12 d-flex justify-content-center align-items-center mb-3 mb-md-0">
-                <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'img/logo1.png' %}" alt="Centro Logo" class="logo" style="width: 220px;">
-                </a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'img/logo1.png' %}" alt="Centro Logo" class="homepageLogo">
+            </a>
+
+            <div class="navbar-text blurb ms-3 d-lg-block text-center">
+                Empowering Individuals & Families
             </div>
-
-            <div class="col-md-4 col-12 text-center mb-3 mb-md-0">
-                <p class="mb-0 font-weight-bold" style="font-size: 1.25rem; color: #0056b3;">Empowering Individuals & Families</p>
-            </div>
-
-            <div class="col-md-4 col-12 d-flex flex-column align-items-center align-items-md-end">
-                <div class="d-flex align-items-center mb-2">
-                    <a class="btn btn-outline-primary d-flex align-items-center me-3" href="{% url 'donate' %}">
-                        <span>DONATIONS</span>
-                        <i class="fas fa-chevron-right ms-2"></i>
-                    </a>
-                    <i class="fab fa-cc-visa fa-2x mx-1"></i>
-                    <i class="fab fa-cc-mastercard fa-2x mx-1"></i>
-                    <i class="fab fa-cc-amex fa-2x mx-1"></i>
-                    <i class="fab fa-cc-paypal fa-2x mx-1"></i>
-                </div>
-                <p class="mt-2 mb-0 text-center text-md-end" style="font-size: 0.875rem; color: #0056b3; font-weight: 750;">A 501c3 Organization</p>
-            </div>
-        </div>
-
-        
-    </div>
-
-    
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
+            
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="{% url 'about' %}" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
-                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'about' %}">Info</a></li>
                             <li><a class="dropdown-item" href="{% url 'team' %}">Team</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Programs & Initiatives</a>
-                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown">Programs</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'food' %}">Food Pantry</a></li>
                             <li><a class="dropdown-item" href="{% url 'community' %}">Community Support Services</a></li>
                             <li><a class="dropdown-item" href="{% url 'foster' %}">Adult & Group Foster Care</a></li>
@@ -328,22 +551,20 @@
                             <li><a class="dropdown-item" href="{% url 'nacdc' %}">NACDC</a></li>
                             <li><a class="dropdown-item" href="{% url 'homeowner' %}">Homeownership</a></li>
                             <li><a class="dropdown-item" href="{% url 'financial' %}">Financial Empowerment</a></li>
-                            <li><a class="dropdown-item" href="{% url 'rebuild' %}">Rebuilding Futures</a></li>
+                            <li><a class="dropdown-item" href="{% url 'rebuild' %}">Rebuilding Futures</a></li>                        
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'donate' %}">Get Involved</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'donate' %}">Get Involved</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">News & Events</a>
-                        <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown">News & Events</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'news' %}">Media</a></li>
                             <li><a class="dropdown-item" href="{% url 'calendar' %}">Calendar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</a>
-                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown">Contact</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'contact' %}">Contact Info</a></li>
                             <li><a class="dropdown-item" href="{% url 'careers' %}">Careers</a></li>
                             <li><a class="dropdown-item" href="{% url 'members' %}">Members</a></li>
@@ -351,15 +572,23 @@
                             <li><a class="dropdown-item" href="{% url 'terms' %}">Terms of Use</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="formsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Forms</a>
-                        <ul class="dropdown-menu" aria-labelledby="formsDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown">Forms</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'forms' %}">More Info</a></li>
                             <li><a class="dropdown-item" href="{% url 'compliance' %}">Compliance Forms</a></li>
                             <li><a class="dropdown-item" href="{% url 'referral' %}">General Referral</a></li>
                         </ul>
                     </li>
                 </ul>
+                <a href="{% url 'donate' %}" class="btn donation-btn ms-lg-3">Donate</a>
+                <span class="payment-icons ms-3">
+                    <i class="fab fa-cc-visa fa-2x mx-1"></i>
+                    <i class="fab fa-cc-mastercard fa-2x mx-1"></i>
+                    <i class="fab fa-cc-amex fa-2x mx-1"></i>
+                    <i class="fab fa-cc-paypal fa-2x mx-1"></i>
+                </span>
             </div>
         </div>
     </nav>
@@ -443,6 +672,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 
 </html>

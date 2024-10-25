@@ -1,13 +1,23 @@
 {% block content %}
 
-   <br>
+   <div class="container mt-5">
+       <!-- Logout Success Message -->
+       <div class="row justify-content-center">
+           <div class="col-md-6">
+               <div class="alert alert-success text-center" role="alert">
+                   <h2 class="mb-4">You have successfully logged out!</h2>
+               </div>
+           </div>
+       </div>
 
-   <div class="alert alert-success" role="alert">
-       <h2 style="text-align: center;">Logged out!</h2>
+       <!-- Options to Login or Go Home -->
+       <div class="row justify-content-center mt-4">
+           <div class="col-md-6 text-center">
+               <h3>Would you like to log in again?</h3>
+               <a href="{% url 'login' %}" class="btn btn-primary mt-3 me-3">Login</a>
+               <a href="{% url 'home' %}" class="btn btn-secondary mt-3">Go back to Home</a>
+           </div>
+       </div>
    </div>
-
-   <h3>Login again?</h3>
-   <a href="{% url 'login' %}">---> Login</a> <br>
-   <a href="{% url 'home' %}"><--- Or go back to home.</a>
 
 {% endblock content %}
