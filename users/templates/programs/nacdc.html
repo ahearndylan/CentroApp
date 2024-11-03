@@ -2,13 +2,69 @@
 {% load static %}
 
 {% block title %}
-<!--Add page title here-->
+CENTRO | NACDC
 {% endblock %}
 
 {% block content %}
 <h2 class="text-center title-heading">
     <span class="title-highlight">NACDC</span> AND THEIR MISSION
 </h2>
+
+<div class="mission-section">
+    <div class="mission-text">
+        <h3 class="mission-heading">OUR MISSION</h3>
+        <p>
+            The New Americans Community Development Corporation (NACDC) intends to undertake community re-development,
+            renovation projects and activities that revitalize an “economic desert area” within Worcester. Our intentions
+            also include creation and expansion of economic activities for all residents of the area with special emphasis on
+            the disenfranchised, low and moderate income population. We will preserve and develop housing, facilitate home
+            ownership, business opportunities and career training ladders in the “Main Middle” area and its immediate
+            surrounding neighborhoods.
+        </p>
+        <div class="button-container">
+            <a href="https://newamericanscdc.org/" class="view-website-btn" target="_blank" rel="noopener noreferrer">VIEW WEBSITE</a>
+        </div>
+    </div>
+    <div class="mission-image">
+        <img src="{% static 'img/NACDC.png' %}" alt="NACDC Community Development Logo">
+    </div>
+</div>
+
+<div class="main-middle-section">
+    <div class="contact-info">
+        <img src="{% static 'img/nacdcseal1.png' %}" alt="NACDC Logo" class="nacdc-logo">
+        <h3 class="section-title"><strong>WHY THE "MAIN MIDDLE?"</strong></h3>
+        <p class="more-info">For more information, please contact:</p>
+        <p class="contact-name"><strong>Robert L. Thomas</strong><br>
+            President and Director of NACDC<br>
+            508-798-1900, Ext 229/ 508-798-255<br>
+            rthomas@centroinc.org</p>
+        <a href="#" class="contact-link2">Submission of Written Testimony on Urban Revitalization Plan</a><br>
+        <a href="#" class="contact-link">The NACDC Brown Paper</a>
+    </div>
+    <div class="main-middle-text">
+        <p>A tremendous amount of great work has taken place all around our designated area but, no concentrated effort in the “Main Middle”. The NACDC has begun that concentration by purchasing 3 small parcels, (14, 16, and 18 Sycamore); one manufacturing building (47 Hermon Street) and negotiating with property owners to acquire their properties for renovation (701 Main, 1, 5 and 9 Sycamore). A team of community members, business owners, city officials, social workers, clients, architects, and engineers worked closely with NACDC’s parent company to determine next steps to continue to provide the much-needed services our constituents, demand. The NACDC was born out of a community of color’s demand for revitalizing their neighborhood. So, for the last twelve months, the NACDC has been dotting the I’s and crossing the T’s necessary to become the minority-owned and operated CDC to provide training, business ownership, jobs homeownership and housing for New Americans.</p>
+        <p>A lot of “doomsayers” ask why? The NACDC feels empowered by the cries of residents, staff, and clients from the area. The composition of the housing stock within our designated area and “Main Middle”, the volume of abandon properties, vacant lots, old industrial buildings and poorly managed SRO’s, viewed properly, have great potential for gentrification and repurposing. Main Middle is a gateway to the 20 year, $111,000,000 downtown urban renewal plan. The area, despite its 5 decades of neglect is quite active. Granted the activity is criminal and includes everything from prostitution to murder. Some have identified the area as the most blighted and decadent. Homelessness is a big problem and the lack of commercial resources is shameful. There are no banks, gas stations, pharmacies, big box or safe entertainment venues.</p>
+        <p>An entity focused and dedicated to revitalize the area with a private and public collaboration will have a great impact on the area. NACDC a wholly owned subsidiary of a 40-year-old community servant who has assisted thousands in this area will be a beacon of hope. One that can shine the light on the root causes. Outline strategies that incorporate socioeconomic wrap-around services which work on personal issues and provide income opportunities, simultaneously. Through business development, jobs are created. The demand for jobs will require specific skills training. The NACDC with its public partners at Workforce Central will train the community. The community will be employed and it is not yet a widely accepted thought but, a job solves a lot of ills. A healthy, employed community with a vibrant business base is a formula for peace, joy, and happiness.</p>
+    </div>
+</div>
+
+<div class="board-section">
+    <div class="board-image">
+        <img src="{% static 'img/nacdc2.jpeg' %}" alt="NACDC Building">
+    </div>
+    <div class="board-info">
+        <h3 class="board-title">NACDC Board of Directors</h3>
+        <ul class="board-list">
+            <li>Robert L. Thomas - President and Director</li>
+            <li>Kristine King - Treasurer and Director</li>
+            <li>Roberto Diaz - Clerk and Director</li>
+            <li>Juan A. Gomez - Director (Chairman)</li>
+            <li>George Cox - Director</li>
+            <li>Michael Jerry - Director</li>
+        </ul>
+    </div>
+</div>
 
 <style>
     .title-heading {
@@ -25,6 +81,231 @@
 
     .title-highlight {
         color: #EFE5A6;
+    }
+
+    .mission-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+
+    .mission-text {
+        flex: 1 1 60%;
+        max-width: 500px;
+        margin-left: 60px;        
+    }
+
+    .mission-heading {
+        text-align: center;
+        color: #1d4db8;
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+
+    .mission-text p {
+        color: #333333;
+        line-height: 1.6;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    .view-website-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        color: #ffffff;
+        background-color: #1d4db8;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+
+    .view-website-btn:hover {
+        background-color: #0f3a87;
+    }
+
+    .mission-image {
+        flex: 1 1 40%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .mission-image img {
+        max-width: 90%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-middle-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+
+    .contact-info {
+        flex: 1 1 25%;
+        color: #1d4db8;
+        font-weight: bold;
+    }
+
+    .nacdc-logo {
+        max-width: 80%;
+        height: auto;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        margin-left: 40px;
+    }
+
+    .section-title {
+        color: #1d4db8;
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+
+    .more-info{
+        color: black;
+    }
+
+    .contact-name {
+        margin-top: 10px;
+        font-weight: normal;
+        color: #333333;
+        margin-bottom: 40px;
+    }
+
+    .contact-link {
+        display: inline-block;
+        color: #1d4db8;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-top: 10px;
+    }
+
+    .contact-link2 {
+        display: inline-block;
+        color: #1d4db8;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .main-middle-text {
+        flex: 1 1 70%;
+        font-size: 1rem;
+        color: #333333;
+        line-height: 1.6;
+    }
+
+    .main-middle-text p {
+        margin-bottom: 20px;
+    }
+
+    .board-section {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+
+    .board-image {
+        flex: 1 1 50%;
+    }
+
+    .board-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .board-info {
+        flex: 1 1 50%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .board-title {
+        font-size: 1.5rem;
+        color: #333333;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .board-list {
+        list-style: none;
+        padding: 0;
+        font-size: 1rem;
+        color: #333333;
+        line-height: 1.6;
+    }
+
+    .board-list li {
+        margin-bottom: 8px;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .mission-section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mission-image {
+            margin-left: 0;
+            justify-content: center;
+        }
+
+        .main-middle-section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-info, .main-middle-text {
+            flex: 1 1 100%;
+        }
+
+        .nacdc-logo {
+            max-width: 60%;
+        }
+
+        .board-section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .board-info {
+            padding-left: 0;
+            text-align: center;
+        }
     }
 </style>
 {% endblock %}
