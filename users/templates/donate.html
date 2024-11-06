@@ -6,7 +6,227 @@ CENTRO | DONATE
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
 
+<h2 class="text-center title-heading">
+    ALL DONATIONS ARE APPRECIATED
+</h2>
+
+<div class="container mt-5">
+    <div class="owl-carousel owl-theme">
+        <div class="item"><img src="{% static 'img/donate2.jpg' %}" alt="Supporter 2"></div>
+        <div class="item"><img src="{% static 'img/donate3.png' %}" alt="Supporter 3"></div>
+        <div class="item"><img src="{% static 'img/donate4.png' %}" alt="Supporter 4"></div>
+        <div class="item"><img src="{% static 'img/donate5.png' %}" alt="Supporter 5"></div>
+        <div class="item"><img src="{% static 'img/donate6.jpg' %}" alt="Supporter 6"></div>
+        <div class="item"><img src="{% static 'img/donate7.png' %}" alt="Supporter 7"></div>
+        <div class="item"><img src="{% static 'img/donate8.jpg' %}" alt="Supporter 8"></div>
+        <div class="item"><img src="{% static 'img/donate9.png' %}" alt="Supporter 9"></div>
+        <div class="item"><img src="{% static 'img/donate10.png' %}" alt="Supporter 10"></div>
+        <div class="item"><img src="{% static 'img/donate11.jpg' %}" alt="Supporter 11"></div>
+        <div class="item"><img src="{% static 'img/donate12.png' %}" alt="Supporter 12"></div>
+        <div class="item"><img src="{% static 'img/donate13.png' %}" alt="Supporter 13"></div>
+        <div class="item"><img src="{% static 'img/donate14.png' %}" alt="Supporter 14"></div>
+        <div class="item"><img src="{% static 'img/donate15.png' %}" alt="Supporter 15"></div>
+        <div class="item"><img src="{% static 'img/donate16.png' %}" alt="Supporter 16"></div>
+        <div class="item"><img src="{% static 'img/donate17.jpg' %}" alt="Supporter 17"></div>
+        <div class="item"><img src="{% static 'img/donate18.png' %}" alt="Supporter 18"></div>
+        <div class="item"><img src="{% static 'img/donate19.png' %}" alt="Supporter 19"></div>
+        <div class="item"><img src="{% static 'img/donate20.png' %}" alt="Supporter 20"></div>
+        <div class="item"><img src="{% static 'img/donate21.png' %}" alt="Supporter 21"></div>
+        <div class="item"><img src="{% static 'img/donate1.jpg' %}" alt="Supporter 1"></div>
+    </div>
 </div>
+
+<div class="valued-donors-section text-center mt-5">
+    <div class="card-window">
+        <h2 class="section-heading">OUR VALUED DONORS</h2>
+        <p class="section-description">
+            Centro Las Americas, Inc. (CENTRO) is a charitable organization exempt from taxation under section 501(c) (3) of the Internal Revenue Code.
+            Contributions are deductible for Federal Income Tax purposes in accordance with applicable law. Corporate Sponsorships, financial and other information 
+            may be obtained by contacting Agustina Velazquez at CENTRO, 11 Sycamore St., Worcester, MA 01608, 508-798-1900.
+        </p>
+    </div>
+</div>
+
+<div class="additional-info-section text-center mt-5">
+    <div class="card-container">
+        <div class="card-window">
+            <h2 class="section-heading">ADDITIONAL WAYS TO GET INVOLVED</h2>
+            <p class="section-description">
+                <strong>CENTRO coordinates many volunteer opportunities throughout the year to enable you to be involved with the community. CENTRO offers programs and services that include: </strong>
+            </p>
+            <ul class="section-list">
+                <li>Connecting people with opportunities to serve</li>
+                <li>Building capacity for effective local volunteering</li>
+                <li>Participating in strategic initiatives that mobilize volunteers to meet local need</li>
+            </ul>
+            <p class="section-description">
+                <strong>Ways to become involved:</strong>
+            </p>
+            <ul class="section-list">
+                <li>Latin American Festival</li>
+                <li>Elder’s Program</li>
+                <li>Food Pantry Services</li>
+                <li>And many other opportunities</li>
+            </ul>
+            <p class="section-description">
+                <strong>For more information regarding our programs, Internships and/or volunteer opportunities, please contact us at <a href="mailto:info@centroinc.org">info@centroinc.org</a>. </strong>
+            </p>
+        </div>
+
+        <div class="card-window">
+            <h2 class="section-heading">SUPPORT CENTRO</h2>
+            <p class="section-description1">Leave a one-time donation</p>
+            <p class="section-description1">
+                <i>Support CENTRO’s mission to assist those individuals and families, striving to become self-sufficient, achieve their dream, with a tax-deductible contribution.</i></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .owl-carousel .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px; 
+        padding: 0; 
+    }
+
+    .owl-carousel .item img {
+        width: 100%;
+        height: 100%; 
+        object-fit: contain; 
+    }
+
+    .title-heading {
+        color: #ffffff;
+        background-color: #8CB7E0;
+        padding: 20px;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .valued-donors-section {
+        font-family: Arial, sans-serif;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .card-window {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #0056b3;
+        margin-bottom: 20px;
+    }
+
+    .section-description {
+        font-size: 1rem;
+        color: black;
+        line-height: 1.5;
+    }
+
+    .additional-info-section {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .card-container {
+        display: flex;
+        gap: 20px; 
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .card-container .card-window {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 45%; 
+        min-width: 300px; 
+    }
+
+    .section-list {
+        text-align: left;
+        color: black;
+        margin-left: 20px;
+        margin-top: 10px;
+        font-size: 1rem;
+        list-style-type: disc; 
+    }
+
+    .section-description a {
+        color: #0056b3;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .section-description a:hover {
+        text-decoration: underline;
+    }
+
+    .section-description1 {
+        font-size: 1rem;
+        color: #0056b3;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+        .card-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-container .card-window {
+            width: 100%; 
+        }
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+$(document).ready(function(){
+    if (typeof $.fn.owlCarousel === 'undefined') {
+        console.error("Owl Carousel is not loaded correctly.");
+    } else {
+        console.log("Owl Carousel loaded successfully.");
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 1500,
+            autoplayHoverPause: false,
+            responsive: {
+                0: { items: 2 },
+                600: { items: 4 },
+                1000: { items: 6 }
+            }
+        });
+    }
+});
+</script>
 {% endblock %}
