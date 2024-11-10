@@ -26,5 +26,107 @@ CENTRO | ILAC
     .title-highlight {
         color: #EFE5A6;
     }
+
+    .card-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .card-container h3 {
+        font-weight: bold;
+        color: #555;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .card-container p {
+        margin-bottom: 20px;
+    }
+
+    .card-container ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card-container li {
+        margin-bottom: 10px;
+    }
+
+    .highlight-text {
+        color: #1a73e8;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .title-heading {
+            font-size: 2rem;
+            padding: 15px;
+        }
+
+        .card-container {
+            padding: 15px;
+        }
+
+        .gallery {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
+
+<div class="card-container">
+    <p>Funded primarily with event sponsorship dollars and small grants, the Institute of Latino Arts & Culture (ILAC) is responsible for sharing our heritage, art, and culture with the general community. The Institute coordinates and implements several culturally-rich events throughout the year.</p>
+    
+    <h3>These include the followings:</h3>
+    <ul>
+        <li>Latin-American Festival</li>
+        <li>Hispanic Heritage Breakfast</li>
+    </ul>
+
+    <p>
+        <span class="highlight-text">The Latin-American Festival</span> is held on the 3rd Saturday in August on the Worcester Common, behind Worcester City Hall.
+    </p>
+</div>
+
+<div class="gallery">
+    <img src="{% static 'img/ilac1.jpg' %}" alt="Image 1">
+    <img src="{% static 'img/ilac2.jpg' %}" alt="Image 2">
+    <img src="{% static 'img/ilac3.jpg' %}" alt="Image 3">
+    <img src="{% static 'img/ilac4.jpg' %}" alt="Image 4">
+    <img src="{% static 'img/ilac5.jpeg' %}" alt="Image 5">
+    <img src="{% static 'img/ilac6.jpg' %}" alt="Image 6">
+    <img src="{% static 'img/ilac7.jpg' %}" alt="Image 7">
+    <img src="{% static 'img/ilac8.jpg' %}" alt="Image 8">
+    <img src="{% static 'img/ilac11.png' %}" alt="Image 11">
+    <img src="{% static 'img/ilac12.jpg' %}" alt="Image 12">
+</div>
 {% endblock %}
