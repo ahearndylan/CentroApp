@@ -31,7 +31,8 @@ urlpatterns = [
     path('contact/terms/', user_views.terms, name='terms'),
 
     # Forms pages
-    path('forms/compliance/', user_views.compliance, name='compliance'),
+    path('forms/compliance/', user_views.compliance_view, name='compliance'),
+    path('forms/compliance_success/', user_views.compliance_success_view, name='compliance_success'),
     path('forms/referral/', user_views.referral, name='referral'),
 
     # Program pages

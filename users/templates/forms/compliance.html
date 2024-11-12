@@ -10,6 +10,91 @@ CENTRO | COMPLIANCE FORMS
     COMPLIANCE <span class="title-highlight">REPORTING</span> SYSTEMS 
 </h2>
 
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="reporting-card shadow p-5 rounded bg-light">
+                <h2 class="text-center mb-4" style="color:#1d4db8;">Reporting Systems</h2>
+                <p>CENTRO’s mechanisms to assist all full-time and part-time employees, contractors, interns, and volunteers (collectively referred to as "personnel") and/or agents in reporting suspected violations of possible criminal conduct or violations of the organizational code of ethics by persons within the organization, without fear of retribution are as follows:</p>
+                
+                <ul>
+                    <li><strong>Web/Server Based:</strong> All personnel can access CENTRO’s website to report suspected violations. A link will be available on the website that will allow the reporting party to provide anonymous information, which will be forwarded to the corporate compliance officer.</li>
+                    
+                    <li><strong>Compliance Box:</strong> All employees may submit information to the CCO concerning possible violations by placing a letter in the Compliance Box located at the end of the staircase at 11 Sycamore Street, Worcester, MA 01608.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="contact-form-container shadow p-5 rounded bg-light">
+                <h2 class="text-center mb-4" style="color:#1d4db8;">Contact Us</h2>
+                <p class="text-center mb-5">Have questions about our services? We're here to help! Send us a message, and our team will get back to you as soon as possible.</p>
+                <form method="post" action="{% url 'compliance' %}" enctype="multipart/form-data" onsubmit="submitSignature()">
+                    {% csrf_token %}
+                    <div class="form-group mb-4">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Enter your last name" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="message">Message:</label>
+                        <textarea name="message" class="form-control" id="message" rows="5" placeholder="Write your message here" required></textarea>
+                    </div>
+
+                    <div class="form-group form-check mb-4">
+                        <input type="checkbox" class="form-check-input" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            By checking this box you agree to our terms and conditions. Please sign the signature field before clicking submit.
+                        </label>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="signature">Signature:</label>
+                        <canvas id="signature-pad" width="300" height="100" style="border: 1px solid #ddd;"></canvas>
+                        <input type="hidden" name="signature" id="signature">
+                        <button type="button" onclick="clearSignature()" class="btn btn-secondary mt-2">Clear Signature</button>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-green mt-3"
+                            style="background-color: #1d4db8; color: white; border-color: #1d4db8;"
+                            onmouseover="this.style.backgroundColor='#218838'; this.style.borderColor='#1e7e34';"
+                            onmouseout="this.style.backgroundColor='#28a745'; this.style.borderColor='#28a745';">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="intro-card shadow p-5 rounded">
+                <h2 class="text-white mb-3">We Are With You for Every Step of the Way</h2>
+                <p class="text-white">
+                    CENTRO offers the highest quality of social services for the community today. Our years of experience and commitment to excellence have earned us the reputation as the largest Hispanic Community provider in the area. Since 1977, we have provided superior service to our community and have assisted in achieving its goal. This is accomplished with a motivated team of skilled and culturally appropriate family development workers, all of whom have been specially trained in one of the many services/programs elements offered.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
 
@@ -30,5 +115,142 @@ CENTRO | COMPLIANCE FORMS
 .title-highlight {
     color: #EFE5A6;
 }
+
+.contact-form-container {
+    max-width: 100%;
+    background-color: #f9f9f9;
+    padding: 40px;
+}
+.contact-form-container h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.contact-form-container p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+.form-control {
+    font-size: 1rem;
+    padding: 0.75rem;
+}
+.btn-green {
+    background-color: #1d4db8 !important;
+    border-color: #1d4db8 !important;
+    color: white !important;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    text-align: center;
+    display: block;
+}
+
+.btn-green:hover {
+    background-color: #173d94 !important;
+    border-color: #173d94 !important;
+    color: white !important;
+}
+
+.reporting-card {
+    max-width: 100%;
+    background-color: #f9f9f9;
+    padding: 40px;
+}
+
+.reporting-card h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1d4db8;
+}
+
+.reporting-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.reporting-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.reporting-card li {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+
+
+.intro-card {
+    background-color: #2c3e50; 
+    padding: 40px;
+    color: #ffffff; 
+}
+
+.intro-card h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #ffffff; 
+}
+
+.intro-card p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 20px;
+    }
+    .contact-form-container h2 {
+        font-size: 1.5rem;
+    }
+    .contact-form-container p {
+        font-size: 0.9rem;
+    }
+}
 </style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+// JavaScript for signature pad
+let canvas = document.getElementById('signature-pad');
+let ctx = canvas.getContext('2d');
+let drawing = false;
+
+canvas.addEventListener('mousedown', function(e) {
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+});
+canvas.addEventListener('mousemove', function(e) {
+    if (drawing) {
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+    }
+});
+canvas.addEventListener('mouseup', function() {
+    drawing = false;
+});
+canvas.addEventListener('mouseleave', function() {
+    drawing = false;
+});
+
+function clearSignature() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function submitSignature() {
+    let dataURL = canvas.toDataURL();
+    document.getElementById('signature').value = dataURL;
+}
+</script>
 {% endblock %}

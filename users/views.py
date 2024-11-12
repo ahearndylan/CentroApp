@@ -5,6 +5,7 @@ from .forms import UserRegistrationForm
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import ContactForm
+from .forms import ComplianceForm
 
 
 def home(request):
@@ -128,3 +129,34 @@ def contact_view(request):
 
 def contact_success_view(request):
     return render(request, 'contact_success.html')
+
+
+def compliance_view(request):
+    if request.method == 'POST':
+        form = ComplianceForm(request.POST)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            
+            subject = f"Compliance Form Submission"
+            full_message = f"Message from {first_name} {last_name} ({email}):\n\n{message}"
+            
+            try:
+                send_mail(
+                    subject,
+                    full_message,
+                    settings.DEFAULT_FROM_EMAIL,
+                    ['contactcentroinc@gmail.com'], 
+                )
+                return redirect('compliance_success') 
+            except Exception as e:
+                print(f"Error sending email: {e}")
+    else:
+        form = ContactForm()
+    
+    return render(request, 'forms/compliance.html', {'form': form})
+
+def compliance_success_view(request):
+    return render(request, 'forms/compliance_success.html')
