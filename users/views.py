@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .forms import UserRegistrationForm
+from django.core.mail import send_mail
+from django.conf import settings
+from .forms import ContactForm
+
 
 def home(request):
     return render(request, 'home.html')
@@ -86,3 +90,41 @@ def contact(request):
 
 def forms(request):
     return render(request, 'forms.html')
+
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            email = form.cleaned_data['email']
+            phone = form.cleaned_data['phone']
+            message = form.cleaned_data['message']
+            
+            subject = f"Contact Form Submission"
+            full_message = (
+                f"Message from {first_name} {last_name}\n"
+                f"Email: {email}\n"
+                f"Phone: {phone}\n\n"
+                f"{message}"
+            )
+            
+            try:
+                send_mail(
+                    subject,
+                    full_message,
+                    settings.DEFAULT_FROM_EMAIL,
+                    ['contactcentroinc@gmail.com'], 
+                )
+                return redirect('contact_success') 
+            except Exception as e:
+                print(f"Error sending email: {e}")
+    else:
+        form = ContactForm()
+    
+    return render(request, 'contact.html', {'form': form})
+
+def contact_success_view(request):
+    return render(request, 'contact_success.html')

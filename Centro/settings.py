@@ -134,3 +134,13 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 LOGIN_REDIRECT_URL = 'home'
+
+
+#For contact function
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # gmails SMTP server
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'contactcentroinc@gmail.com'
+EMAIL_HOST_PASSWORD = 'hcay ybuf tqot jfht'  # app-specific password
+DEFAULT_FROM_EMAIL = 'contactcentroinc@gmail.com'

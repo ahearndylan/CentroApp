@@ -2,6 +2,10 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from users import views as user_views
+from django.urls import path
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
@@ -42,9 +46,9 @@ urlpatterns = [
     path('programs/nacdc/', user_views.nacdc, name='nacdc'),
     path('programs/rebuild/', user_views.rebuild, name='rebuild'),
 
-    path('contact/', user_views.contact, name='contact'),
 
     path('forms/', user_views.forms, name='forms'),
 
-
+    path('contact/success/', user_views.contact_success_view, name='contact_success'),
+    path('contact/', user_views.contact_view, name='contact'),
 ]
