@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block title %}
     CENTRO | CONTACT US
@@ -8,6 +10,44 @@
 <h2 class="text-center title-heading">
     OVER <span class="title-highlight">40 YEARS</span> OF SERVICE IN THE CITY OF WORCESTER 
 </h2>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="info-box p-4 bg-light shadow-sm">
+                <h3 class="text-primary text-center">CONTACT OR JOIN US</h3>
+                <p>
+                    Our organization is comprised of incredibly talented and passionate people making a difference in peoples’ lives every day.
+                    CENTRO’s commitment to excellence allows us to continuously improve our methods, bolster our talent and adapt to the needs of our clients.
+                    We strive to deliver exceptional service to our clients and a rewarding experience for our employees. In return, we’ve enjoyed steady growth over the past couple of years...
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="founding-box p-4 bg-light shadow-sm">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <img src="{% static 'img/contact2.png' %}" alt="Father Miguel Bafaro" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="col-md-8">
+                        <h4 class="text-primary">A FEW OF OUR FOUNDING MEMBERS</h4>
+                        <br>
+                        <ul class="founding-members-list list-unstyled">
+                            <li><strong>Father Miguel Bafaro</strong></li>
+                            <li>Luis Perez</li>
+                            <li>Jacinto Arroyo</li>
+                            <li>Lidia E. Reyes</li>
+                            <li>Francisco Ojeda</li>
+                            <li>Jose R. Perez</li>
+                            <li>Juan Mirillo</li>
+                            <li>Armando Santiago</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container my-5">
     <div class="card shadow-sm">
@@ -93,6 +133,55 @@
 {% block extra_css %}
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <style>
+
+    .info-box, .founding-box {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+
+    .info-box h3, .founding-box h4 {
+        font-weight: bold;
+    }
+
+    .info-box h3 {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+        color: #1d4db8 !important;
+    }
+
+    .founding-box h4 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        color: #1d4db8 !important;
+    }
+
+    .founding-box img {
+        width: 100%;
+        max-width: 140px;
+        margin-bottom: 5px;
+    }
+
+    .founding-box ul {
+        padding-left: 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .founding-box ul li {
+        line-height: 1.6;
+    }
+
+
+    .founding-members-list {
+        column-count: 2;
+        column-gap: 20px;
+    }
+
+    .founding-members-list li {
+        line-height: 1.6;
+    }
+
     .contact-form-container {
         max-width: 100%;
         background-color: #f9f9f9;
