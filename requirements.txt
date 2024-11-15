@@ -13,3 +13,5 @@ gunicorn==20.1.0
 whitenoise==6.4.0 
 
 django-widget-tweaks==1.4.12
+
+reportlab==4.0.4  
