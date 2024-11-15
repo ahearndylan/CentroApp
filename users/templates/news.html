@@ -649,5 +649,14 @@ CENTRO | NEWS
     function closeArticle(articleId) {
         document.getElementById(articleId).style.display = 'none';
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash;
+    if (hash) {
+        const articleId = hash.substring(1); // Remove the "#" from the hash
+        openArticle(articleId);
+    }
+});
+
 </script>
 {% endblock %}

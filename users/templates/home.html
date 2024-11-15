@@ -12,8 +12,66 @@ CENTRO | HOME
 </section>
 
 <section>
-    <!--News-->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'news' %}#article1" onclick="openArticle('article1')" class="article-preview" style="text-decoration: none;">
+                    <div class="card">
+                        <img src="{% static 'img/news1.jpg' %}" class="card-img-top" alt="Black History Month">
+                        <div class="card-body">
+                            <p class="text-muted mb-1">Feb 14 · 1 min read</p>
+                            <h5 class="card-title">"Whatever affects one directly, affects all indirectly." — Martin Luther King Jr.</h5>
+                            <p class="card-text">All people, regardless of race, deserve the same rights and freedoms. As CENTRO works hard to assist individuals...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'news' %}#article2" onclick="openArticle('article2')" class="article-preview" style="text-decoration: none;">
+                    <div class="card">
+                        <img src="{% static 'img/news2.jpg' %}" class="card-img-top" alt="Distribution of at-home COVID-19 testing kits">
+                        <div class="card-body">
+                            <p class="text-muted mb-1">Mar 5, 2022 · 2 min read</p>
+                            <h5 class="card-title">Worcester's distribution of at-home COVID-19 testing kits continues via community organizations</h5>
+                            <p class="card-text">WORCESTER – As COVID-19 cases continue to rise due to the impact of the omicron variant, the city is recommending that people...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'news' %}#article3" onclick="openArticle('article3')" class="article-preview" style="text-decoration: none;">
+                    <div class="card">
+                        <img src="{% static 'img/news3.jpg' %}" class="card-img-top" alt="Community Health Event">
+                        <div class="card-body">
+                            <p class="text-muted mb-1">Mar 5, 2022 · 2 min read</p>
+                            <h5 class="card-title">Friendly House, Centro among 62 organizations to receive community empowerment grants</h5>
+                            <p class="card-text">MASS. - Over 60 organizations across the state are receiving 65 grants totaling more than $20 million through the...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'news' %}#article4" onclick="openArticle('article4')" class="article-preview" style="text-decoration: none;">
+                    <div class="card">
+                        <img src="{% static 'img/news4.jpg' %}" class="card-img-top" alt="Education Support Program">
+                        <div class="card-body">
+                            <p class="text-muted mb-1">Jan 27, 2022 · 2 min read</p>
+                            <br>
+                            <h5 class="card-title">The Food Pantry is Moving!</h5>
+                            <br>
+                            <br>
+                            <p class="card-text">Due to the current state guidelines in place for COVID-19, we plan to host a grand opening celebration at a later date when it is safe to...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
+
 
 <section class="partners-section py-5">
     <div class="container">
@@ -292,9 +350,41 @@ CENTRO | HOME
 
 
 <style>
+
+    .article-preview .card {
+        transition: transform 0.2s ease;
+        cursor: pointer;
+    }
+
+    .article-preview .card:hover {
+        transform: scale(1.02);
+    }
+
+    .article-preview .card-title {
+        color: #333;
+        font-weight: bold;
+    }
+
+    .article-preview a {
+        text-decoration: none !important;
+        color: inherit !important; 
+    }
+
+    .article-preview .card-body a {
+        color: #000 !important; 
+    }
+
+    .article-preview .card-body a:hover {
+        color: #333 !important; 
+    }
+
+    .card-text{
+        color: black;
+    }
+
     .custom-btn {
-        background-color: #e74c3c; /* Red background */
-        border-color: #e74c3c; /* Red border */
+        background-color: #e74c3c; 
+        border-color: #e74c3c; 
     }
 
     .custom-btn:hover {
@@ -303,34 +393,32 @@ CENTRO | HOME
     }
 
     .video-item-container {
-    width: 300px; 
-    display: inline-block;
-    margin-right: 10px;
-    text-align: center; 
-    vertical-align: top;
-    box-sizing: border-box; 
-    overflow-wrap: break-word; 
-    word-wrap: break-word; 
-}
+        width: 300px; 
+        display: inline-block;
+        margin-right: 10px;
+        text-align: center; 
+        vertical-align: top;
+        box-sizing: border-box; 
+        overflow-wrap: break-word; 
+        word-wrap: break-word; 
+    }
 
-.video-description {
-    width: 100%;
-    max-width: 100%; 
-    word-wrap: break-word; 
-    white-space: normal; 
-    display: block; 
-}
+    .video-description {
+        width: 100%;
+        max-width: 100%; 
+        word-wrap: break-word; 
+        white-space: normal; 
+        display: block; 
+    }
 
-.description-note {
-    font-size: 0.875rem; 
-    color: #888;
-    white-space: normal; 
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    width: 100%; 
-}
-
-
+    .description-note {
+        font-size: 0.875rem; 
+        color: #888;
+        white-space: normal; 
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        width: 100%; 
+    }
 </style>
 
 {% endblock %}
