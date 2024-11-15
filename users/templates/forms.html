@@ -6,7 +6,204 @@ CENTRO | FORMS RESOURCES
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
+<h2 class="text-center title-heading">
+    RESOURCE <span class="title-highlight">LIBRARY</span>
+</h2>
 
+<div class="resources-container">
+    <div class="resource-image-container">
+        <img src="{% static 'img/forms1.jpg' %}" alt="Caregiver holding elder's hand" class="resource-image">
+    </div>
+
+    <div class="resource-content">
+        <h3>AFC Caregiver Logs</h3>
+        <p>
+            To access the Caregiver Log, please click on the link below. Fill in your name and email address, 
+            complete the log, and submit.
+        </p>
+        <p>
+            For any questions, please call Marielly Rossy at 508-798-1900 Ext. 277. Thank you.
+        </p>
+        <a href="{% static 'img/forms3.pdf' %}" target="_blank" class="resource-button">CAREGIVER LOGS</a>
+    </div>
+
+    <div class="resource-image-container">
+        <img src="{% static 'img/forms2.jpg' %}" alt="Person holding a briefcase" class="resource-image">
+    </div>
+
+    <div class="resource-content">
+        <h3>Ethical Codes of Conduct</h3>
+        <p>
+            Click below to open and download our PDF Code of Conduct document. If you have any questions, please 
+            contact us directly at Admin@Centroinc.org.
+        </p>
+        <a href="{% static 'img/forms4.pdf' %}" target="_blank" class="resource-button">CODE OF CONDUCT</a>
+    </div>
 </div>
+
+<div class="resources-container">
+    
+    <div class="resource-content">
+        <h3>The Rights of Persons Served Policy</h3>
+        <p>
+            Click below to open and download our pdf The Rights of Persons Served Policy Document. If you have any questions please contact us directly at Admin@Centroinc.org.
+        </p>
+        <a href="{% static 'img/forms7.pdf' %}" target="_blank" class="resource-button">POLICY</a>
+        <a href="{% static 'img/forms8.pdf' %}" target="_blank" class="resource-button">MY HUMAN RIGHTS VS. RESPONSIBILITIES POLICY</a>
+    </div>
+
+    <div class="resource-image-container">
+        <img src="{% static 'img/forms6.jpg' %}" alt="Caregiver holding elder's hand" class="resource-image">
+    </div>
+
+    <div class="resource-content">
+        <h3>Grievance Procedure</h3>
+        <p>
+            Click below to open and download our pdf Grievance Procedure Policy Document. If you have any questions please contact us directly at Admin@Centroinc.org.
+        </p>
+        <a href="{% static 'img/forms9.pdf' %}" target="_blank" class="resource-button">CODE OF CONDUCT</a>
+    </div>
+
+    <div class="resource-image-container">
+        <img src="{% static 'img/forms5.jpg' %}" alt="Person holding a briefcase" class="resource-image">
+    </div>
+</div>
+
+
+<div class="resources-container">
+
+    <div class="resource-image-container">
+        <img src="{% static 'img/forms10.jpg' %}" alt="Caregiver holding elder's hand" class="resource-image">
+    </div>
+
+
+    <div class="resource-content">
+        <h3>Reporting Alleged or Suspected Abuse and Neglect Policy</h3>
+        <p>
+            Click below to open and download our pdf Reporting Alleged or Suspected Abuse and Neglect Policy Document. If you have any questions please contact us directly at Admin@Centroinc.org.        </p>
+        <a href="{% static 'img/forms11.pdf' %}" target="_blank" class="resource-button">CODE OF CONDUCT</a>
+    </div>
+
+    <div class="resource-image-container">
+        <img src="{% static 'img/forms12.jpg' %}" alt="Person holding a briefcase" class="resource-image">
+    </div>
+</div>
+
+
+<style>
+    .title-heading {
+        color: #ffffff;
+        background-color: #8CB7E0;
+        padding: 20px;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .title-highlight {
+        color: #EFE5A6;
+    }
+
+    .resources-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 40px;
+        align-items: center;
+    }
+
+    .resource-image-container {
+        grid-column: span 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .resource-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .resource-content {
+        grid-column: span 1;
+        text-align: center; 
+        padding: 20px;
+    }
+
+    .resource-content h3 {
+        color: #e87461;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .resource-content p {
+        color: #333;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .resource-button {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #e87461;
+        border: 2px solid #e87461;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .resource-button:hover {
+        background-color: #e87461;
+        color: #ffffff;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .resources-container {
+            grid-template-columns: 1fr; 
+            gap: 10px; 
+        }
+
+        .resource-image-container,
+        .resource-content {
+            grid-column: span 1; 
+            text-align: center; 
+        }
+
+        .resource-image {
+            width: 70%; 
+            height: auto;
+        }
+
+        .resource-content h3 {
+            font-size: 1.2rem; 
+        }
+
+        .resource-content p {
+            font-size: 0.9rem; 
+        }
+
+        .resource-button {
+            padding: 8px 15px; 
+            font-size: 0.9rem;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .title-heading {
+            font-size: 1.8rem; 
+            padding: 15px;
+        }
+
+        .resource-button {
+            font-size: 0.8rem; 
+            padding: 6px 10px;
+        }
+    }
+
+</style>
 {% endblock %}
