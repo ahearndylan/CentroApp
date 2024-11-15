@@ -51,4 +51,8 @@ urlpatterns = [
 
     path('contact/success/', user_views.contact_success_view, name='contact_success'),
     path('contact/', user_views.contact_view, name='contact'),
+
+    path('subscribe/', user_views.subscribe_view, name='subscribe'),
+    path('subscribe_success/', user_views.subscribe_success_view, name='subscribe_success'),
+
 ]

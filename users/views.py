@@ -13,6 +13,8 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from io import BytesIO
 from reportlab.lib import colors
+from .forms import SubscribeForm
+
 
 
 def home(request):
@@ -257,3 +259,31 @@ def referral_view(request):
 
 def referral_success(request):
     return render(request, 'forms/referral_success.html')
+
+def subscribe_view(request):
+    if request.method == "POST":
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            full_name = form.cleaned_data['full_name']
+            email = form.cleaned_data['email']
+            
+            subject = "New Subscription Request"
+            message = f"Subscriber Name: {full_name}\nSubscriber Email: {email}"
+            recipient_email = 'contactcentroinc@gmail.com'
+
+            try:
+                send_mail(
+                    subject,
+                    message,
+                    settings.DEFAULT_FROM_EMAIL,
+                    [recipient_email],
+                )
+                return redirect('subscribe_success')
+            except Exception as e:
+                print(f"Error sending subscription email: {e}")
+                return HttpResponse("There was an error processing your subscription.")
+    else:
+        return HttpResponse("Invalid request.")
+    
+def subscribe_success_view(request):
+    return render(request, 'subscribe_success.html')
