@@ -22,5 +22,141 @@ CENTRO | FAMILY SUPPORT SERVICES
         font-weight: bold;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
+    .container .left-section, .container .right-section {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .left-section {
+        background-color: #f9f9f9;
+    }
+
+    .right-section {
+        background-color: #ffffff;
+    }
+
+    .section-title {
+        color: #0056b3;
+        font-weight: bold;
+    }
+
+    .hours {
+        color: #0056b3;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .calendar-link {
+        display: inline-block;
+        text-align: center;
+        margin-top: 20px;
+        color: #0056b3;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .calendar-link:hover {
+        color: #0f4cbd;
+        text-decoration: underline;
+    }
+
+    .calendar-icon {
+        font-size: 2rem;
+    }
+
+    /* Contact Information Section */
+    .contact-section {
+        background-color: #f9f9f9;
+        padding: 30px;
+        margin-top: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-title {
+        color: #0056b3;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+    }
+
+    .contact-info p {
+        margin: 0;
+    }
+
+    .contact-info .name {
+        color: #ff6b6b;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .contact-info .position, .contact-info .location {
+        color: #0056b3;
+        font-weight: bold;
+    }
+
+    .contact-info .phone, .contact-info .email {
+        color: #333;
+    }
 </style>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-5 left-section text-center">
+            <h3 class="section-title">ABOUT FSS</h3>
+            <img src="{% static 'img/family10.jpg' %}" class="img-fluid mb-4 rounded" alt="Family Support">
+            <p>Our Family Support Centers welcome members of the community on a walk-in basis and provide information, referrals, and other services.</p>
+            <p>The Family Support Center Program is funded by the Department of Developmental Services (DDS). DDS provides children and adults with developmental disabilities and their families support, information, and the tools to envision a life lived to the fullest. CENTRO offers this program to all DDS eligible individuals. We specialize our services toward multicultural and diverse families in the communities of Worcester County.</p>
+            <p class="hours">Worcester (Central) Hours:<br>Monday – Friday<br>9:00 AM – 5:00 PM</p>
+            <a href="{% url 'calendar' %}" class="calendar-link">
+                <i class="fas fa-calendar-alt calendar-icon"></i><br>CLICK HERE FOR MONTHLY ACTIVITIES
+            </a>
+        </div>
+        
+        <div class="col-md-7 right-section">
+            <div class="mb-4">
+                <br>
+                <h4 class="section-title">Information and Referrals</h4>
+                <p>Our Family Support Center provides information regarding all the resources available at CENTRO as well as resources available in their local community in order to help improve the family’s quality of life.</p>
+            </div>
+            <br>
+            <div class="mb-4">
+                <h4 class="section-title">Navigation</h4>
+                <p>Families with intense needs are assisted on a one-on-one level to ensure access to all resources and services available in the community for the individual. We provide both short-term navigation and long-term navigation depending on the needs and the individual circumstances. Families are partnered with a friendly and culturally aware navigator from our qualified staff.</p>
+            </div>
+            <br>
+            <div class="mb-4">
+                <h4 class="section-title">Monthly Calendar</h4>
+                <p>The Family Support Center offers a monthly calendar full of activities that offer recreation, education, information, and special events for DDS clients. Our activities and events are always presented in a way that accommodates to different scheduling needs, in an appropriate environment that provides accessibility and participation for all.</p>
+            </div>
+            <br>
+            <div class="mb-4">
+                <h4 class="section-title">Transition</h4>
+                <p>Individuals that are in the process of transition into adulthood based on the DDS standards receive support and wrap-around services which helps families coordinate between school services, day programs, employment, and other agencies involved.</p>
+            </div>
+            <br>
+            <div class="mb-4">
+                <h4 class="section-title">Other Services</h4>
+                <p>Through our program, families also have access to flexible funding available through DDS, respite services, state-wide trainings, and many other resources. Depending on the area being served, families can also have access to the services offered by other programs at CENTRO such as the Emergency Food Pantry, Children Behavioral Health Initiative (CBHI), Adult Family Care (AFC), and others.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div class="contact-section text-center">
+        <h3 class="contact-title">CONTACT INFORMATION</h3>
+        <div class="contact-info mt-3">
+            <p class="location">Worcester</p>
+            <p class="name">Mayerling De La Rosa, MS</p>
+            <p class="position">Director of Community Support & Strategic Initiatives</p>
+            <p class="phone">508-798-1900</p>
+            <p class="email">Familyservices@centroinc.org</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
