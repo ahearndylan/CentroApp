@@ -10,6 +10,123 @@ CENTRO | REFERRAL FORMS
     GENERAL <span class="title-highlight">REFERRAL</span> FORM 
 </h2>
 
+<div class="referral-info-section">
+    <div class="referral-image">
+        <img src="{% static 'img/referral1.jpg' %}" alt="Referral Information" class="img-fluid">
+    </div>
+    <div class="referral-text">
+        <p class="info-heading">Please complete all the information below.</p>
+        <p>The Outreach contact phone number is <a href="tel:5087981900">508.798.1900 ext.571</a>.
+           Please fax the Referral form to 508-798-1908 or scan and send to 
+           <a href="mailto:generalreferral@centroinc.org">generalreferral@centroinc.org</a>.</p>
+        <p><strong>Centro’s direct services are:</strong></p>
+        <p>Adult Foster Care (AFC), Group Adult Foster Care (GAFC), Family Shared Living (FSL), 
+           Family Support Services (FSS), Intensive Family Stabilization (IFS) and Community Support Services (CSS).</p>
+        <p>For more detailed information about our services or the agency, please see us on the Web at 
+           <a href="https://www.centroinc.org">www.Centroinc.org</a> or visit us on Facebook as 
+           <strong>@CENTROWorcester</strong>.</p>
+    </div>
+</div>
+
+<br>
+
+<form method="post" class="referral-form">
+    {% csrf_token %}
+
+    <div class="form-row">
+        <div class="form-group">
+            {{ form.first_name.label_tag }} {{ form.first_name }}
+        </div>
+        <div class="form-group">
+            {{ form.last_name.label_tag }} {{ form.last_name }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form.date_of_birth.label_tag }} {{ form.date_of_birth }}
+    </div>
+
+    <div class="form-group">
+        {{ form.program_or_services.label_tag }} {{ form.program_or_services }}
+    </div>
+
+    <div class="form-group">
+        {{ form.insurance_company.label_tag }} {{ form.insurance_company }}
+    </div>
+
+    <div class="form-group">
+        {{ form.insurance_number.label_tag }} {{ form.insurance_number }}
+    </div>
+
+    <div class="form-group">
+        {{ form.preferred_language.label_tag }} {{ form.preferred_language }}
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            {{ form.street_address.label_tag }} {{ form.street_address }}
+        </div>
+        <div class="form-group">
+            {{ form.address_line_2.label_tag }} {{ form.address_line_2 }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            {{ form.city.label_tag }} {{ form.city }}
+        </div>
+        <div class="form-group">
+            {{ form.state.label_tag }} {{ form.state }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form.postal_code.label_tag }} {{ form.postal_code }}
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            {{ form.guardian_first_name.label_tag }} {{ form.guardian_first_name }}
+        </div>
+        <div class="form-group">
+            {{ form.guardian_last_name.label_tag }} {{ form.guardian_last_name }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            {{ form.guardian_phone.label_tag }} {{ form.guardian_phone }}
+        </div>
+        <div class="form-group">
+            {{ form.guardian_email.label_tag }} {{ form.guardian_email }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form.notes.label_tag }} {{ form.notes }}
+    </div>
+
+    <div class="form-group">
+        {{ form.referred_by.label_tag }} {{ form.referred_by }}
+    </div>
+
+    <div class="form-group">
+        {{ form.date_of_referral.label_tag }} {{ form.date_of_referral }}
+    </div>
+
+    <div class="form-group">
+        {{ form.referral_phone.label_tag }} {{ form.referral_phone }}
+    </div>
+
+    <div class="form-group">
+        {{ form.referral_from.label_tag }} {{ form.referral_from }}
+    </div>
+
+    <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+</form>
+
+<br>
+<br>
 
 {% endblock %}
 
@@ -19,10 +136,10 @@ CENTRO | REFERRAL FORMS
     color: #ffffff;
     background-color: #8CB7E0;
     padding: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     letter-spacing: 1px;
-    border-radius: 10px;
-    font-size: 2.5rem;
+    border-radius: 8px;
+    font-size: 2.2rem;
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -30,5 +147,125 @@ CENTRO | REFERRAL FORMS
 .title-highlight {
     color: #EFE5A6;
 }
+
+.referral-info-section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9fafc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.referral-image {
+    flex: 1;
+    max-width: 300px;
+}
+
+.referral-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.referral-text {
+    flex: 2;
+    color: #1a385d;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.info-heading {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1d4db8;
+    margin-bottom: 10px;
+}
+
+.referral-text p {
+    margin: 8px 0;
+}
+
+.referral-text a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.referral-text a:hover {
+    text-decoration: underline;
+}
+
+.referral-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1; 
+}
+
+.referral-form input[type="text"],
+.referral-form input[type="email"],
+.referral-form input[type="tel"],
+.referral-form select,
+.referral-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    margin-bottom: 10px; 
+}
+
+.referral-form input:focus,
+.referral-form select:focus,
+.referral-form textarea:focus {
+    border-color: #8CB7E0;
+    outline: none;
+    box-shadow: 0 0 5px rgba(140, 183, 224, 0.4);
+}
+
+.submit-btn {
+    background-color: #8CB7E0;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #6ea5cc;
+}
+
+@media (max-width: 768px) {
+    .referral-info-section {
+        flex-direction: column;
+    }
+
+    .referral-form {
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}
+
 </style>
 {% endblock %}

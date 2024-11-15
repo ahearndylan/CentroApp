@@ -24,18 +24,17 @@ urlpatterns = [
 
     path('team/', user_views.team, name='team'),
 
-    # Contact pages
     path('contact/careers/', user_views.careers, name='careers'),
     path('contact/members/', user_views.members, name='members'),
     path('contact/privacy/', user_views.privacy, name='privacy'),
     path('contact/terms/', user_views.terms, name='terms'),
 
-    # Forms pages
     path('forms/compliance/', user_views.compliance_view, name='compliance'),
     path('forms/compliance_success/', user_views.compliance_success_view, name='compliance_success'),
-    path('forms/referral/', user_views.referral, name='referral'),
 
-    # Program pages
+    path('forms/referral/', user_views.referral_view, name='referral_form'),
+    path("forms/referral_success/", user_views.referral_success, name="referral_success"),
+
     path('programs/children/', user_views.children, name='children'),
     path('programs/community/', user_views.community, name='community'), 
     path('programs/family/', user_views.family, name='family'),

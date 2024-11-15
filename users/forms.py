@@ -3,6 +3,31 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
+
+class ReferralForm(forms.Form):
+    first_name = forms.CharField(label="First Name", max_length=100)
+    last_name = forms.CharField(label="Last Name", max_length=100)
+    date_of_birth = forms.DateField(label="Date of Birth", widget=forms.DateInput(format='%d-%m-%Y', attrs={'placeholder': 'DD/MM/YYYY'}))
+    program_or_services = forms.CharField(label="Program or Services Requested", max_length=255)
+    insurance_company = forms.CharField(label="Insurance Company", max_length=255)
+    insurance_number = forms.CharField(label="Insurance Number or ID", max_length=100)
+    preferred_language = forms.CharField(label="Preferred Language", max_length=100)
+    street_address = forms.CharField(label="Street Address", max_length=255)
+    address_line_2 = forms.CharField(label="Address Line 2", max_length=255, required=False)
+    city = forms.CharField(label="City", max_length=100)
+    state = forms.CharField(label="State/Region/Province", max_length=100)
+    postal_code = forms.CharField(label="Postal/Zip Code", max_length=20)
+    guardian_first_name = forms.CharField(label="Guardian First Name", max_length=100)
+    guardian_last_name = forms.CharField(label="Guardian Last Name", max_length=100)
+    guardian_phone = forms.CharField(label="Guardian Phone", max_length=20)
+    guardian_email = forms.EmailField(label="Guardian Email Address")
+    notes = forms.CharField(label="Notes or Message", widget=forms.Textarea, required=False)
+    referred_by = forms.CharField(label="Referred By", max_length=100)
+    date_of_referral = forms.DateField(label="Date of Referral", widget=forms.DateInput(format='%d-%m-%Y', attrs={'placeholder': 'DD/MM/YYYY'}))
+    referral_phone = forms.CharField(label="Phone", max_length=20)
+    referral_from = forms.CharField(label="From", max_length=100)
+
+
 class UserRegistrationForm(UserCreationForm):
     fname = forms.CharField(max_length=100, label="First Name")
     lname = forms.CharField(max_length=100, label="Last Name")
