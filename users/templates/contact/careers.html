@@ -6,7 +6,145 @@ CENTRO | CAREERS
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
 
+<h2 class="text-center title-heading">
+    START YOUR CAREER WITH CENTRO
+</h2>
+
+<div class="container my-5">
+    <h3 class="text-center new-section-heading">
+        OPEN JOB LISTINGS IN CENTRAL MASSACHUSETTS - NOW HIRING
+    </h3>
+    <p class="text-center job-categories">
+        FULLTIME &nbsp;&nbsp; PARTIME &nbsp;&nbsp; INTERNSHIP &nbsp;&nbsp; VOLUNTEER &nbsp;&nbsp; COMMUNITY SERVICE
+    </p>
+
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <p>Our organization is comprised of incredibly talented and passionate people making a difference in peoples’ lives every day. CENTRO’s commitment to excellence allows us to continuously improve our methods, bolster our talent and adapt to the needs of our clients. We strive to deliver exceptional service to our clients and a rewarding experience for our employees. In return, we’ve enjoyed steady growth over the past couple of years.</p>
+            <p>Our work environment fosters collaboration and promotes interactions at all levels of the organization. We encourage everyone to develop to their full potential and do whatever we can to enhance and support that development.</p>
+            <p>Outside of work, we create opportunities to socialize with colleagues, through cross-functional outings, organization-wide events, and volunteer opportunities. These are not only fun but encourage collaboration and synergy throughout our organization.</p>
+            <p>Joining CENTRO is an opportunity to experience a unique and challenging work environment. Our goal is to continue to be a great place to work, both professionally and personally.</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="{% static 'img/eeo1.jpg' %}" alt="Diverse team illustration" class="img-fluid">
+        </div>
+    </div>
 </div>
+
+<div class="container my-4 text-center">
+    <div class="d-flex align-items-center justify-content-center">
+        <img src="{% static 'img/eeo-logo.png' %}" alt="EEO Logo" class="eeo-logo mr-3">
+        <h5 class="equal-opportunity-text">CENTRO is an Equal Opportunity Employer</h5>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <iframe src="https://centroinc.applicantstack.com/x/openings" width="100%" height="1300px" style="border:none;"></iframe>
+</div>
+
+
+<div class="container involvement-section my-5 p-4">
+    <h4 class="text-center involvement-heading">ADDITIONAL WAYS TO GET INVOLVED</h4>
+    <p><strong><span class="text-primary">CENTRO</span></strong> coordinates many volunteer opportunities throughout the year to enable you to be involved with the community. CENTRO offers programs and services that include:</p>
+    
+    <ul class="involvement-list">
+        <li>Connecting people with opportunities to serve</li>
+        <li>Building capacity for effective local volunteering</li>
+        <li>Participating in strategic initiatives that mobilize volunteers to meet local need</li>
+    </ul>
+
+    <p><strong>Ways to become involved:</strong></p>
+    <ul class="involvement-list">
+        <li>Latin American Festival</li>
+        <li>Elder’s Program</li>
+        <li>Food Pantry Services</li>
+        <li>And many other opportunities</li>
+    </ul>
+
+    <p>For more information regarding our programs, internships and/or volunteer opportunities, please contact us at <a href="mailto:info@centroinc.org">info@centroinc.org</a>.</p>
+</div>
+
+
+<style>
+
+    .involvement-section {
+        max-width: 800px; 
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px; 
+        margin: 0 auto; 
+    }
+
+    .involvement-heading {
+        font-size: 1.3rem; 
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .involvement-list {
+        list-style-type: disc;
+        padding-left: 18px; 
+        margin-bottom: 15px;
+    }
+
+    .involvement-list li {
+        font-size: 0.95rem; 
+        color: #333;
+        line-height: 1.5;
+        margin-bottom: 6px;
+    }
+
+    .text-primary {
+        color: #0f3a87 !important;
+    }
+
+    .title-heading {
+        color: #ffffff;
+        background-color: #8CB7E0;
+        padding: 20px;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .new-section-heading {
+        color: #0f3a87;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .job-categories {
+        color: #0f3a87;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+    }
+    .container p {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+    }
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    .eeo-logo {
+        max-height: 200px;
+        margin-right: 10px;
+    }
+    .equal-opportunity-text {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin-left: 20px;
+    }
+</style>
+
 {% endblock %}
