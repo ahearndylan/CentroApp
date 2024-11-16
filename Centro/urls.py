@@ -55,4 +55,6 @@ urlpatterns = [
     path('subscribe/', user_views.subscribe_view, name='subscribe'),
     path('subscribe_success/', user_views.subscribe_success_view, name='subscribe_success'),
 
+    path("admin/", admin.site.urls),
+
 ]
