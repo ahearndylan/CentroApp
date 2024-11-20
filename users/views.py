@@ -14,6 +14,9 @@ from reportlab.pdfgen import canvas
 from io import BytesIO
 from reportlab.lib import colors
 from .forms import SubscribeForm
+from .models import ContactMessage
+from .forms import ComplianceForm
+from .models import ComplianceMessage
 
 
 
@@ -107,30 +110,14 @@ def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            email = form.cleaned_data['email']
-            phone = form.cleaned_data['phone']
-            message = form.cleaned_data['message']
-            
-            subject = f"Contact Form Submission"
-            full_message = (
-                f"Message from {first_name} {last_name}\n"
-                f"Email: {email}\n"
-                f"Phone: {phone}\n\n"
-                f"{message}"
+            ContactMessage.objects.create(
+                first_name=form.cleaned_data['first_name'],
+                last_name=form.cleaned_data['last_name'],
+                email=form.cleaned_data['email'],
+                phone=form.cleaned_data['phone'],
+                message=form.cleaned_data['message'],
             )
-            
-            try:
-                send_mail(
-                    subject,
-                    full_message,
-                    settings.DEFAULT_FROM_EMAIL,
-                    ['contactcentroinc@gmail.com'], 
-                )
-                return redirect('contact_success') 
-            except Exception as e:
-                print(f"Error sending email: {e}")
+            return redirect('contact_success') 
     else:
         form = ContactForm()
     
@@ -144,27 +131,16 @@ def compliance_view(request):
     if request.method == 'POST':
         form = ComplianceForm(request.POST)
         if form.is_valid():
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-            
-            subject = f"Compliance Form Submission"
-            full_message = f"Message from {first_name} {last_name} ({email}):\n\n{message}"
-            
-            try:
-                send_mail(
-                    subject,
-                    full_message,
-                    settings.DEFAULT_FROM_EMAIL,
-                    ['contactcentroinc@gmail.com'], 
-                )
-                return redirect('compliance_success') 
-            except Exception as e:
-                print(f"Error sending email: {e}")
+            ComplianceMessage.objects.create(
+                first_name=form.cleaned_data['first_name'],
+                last_name=form.cleaned_data['last_name'],
+                email=form.cleaned_data['email'],
+                message=form.cleaned_data['message'],
+            )
+            return redirect('compliance_success')  # Redirect to a success page
     else:
-        form = ContactForm()
-    
+        form = ComplianceForm()
+
     return render(request, 'forms/compliance.html', {'form': form})
 
 def compliance_success_view(request):
