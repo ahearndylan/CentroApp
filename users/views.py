@@ -17,6 +17,10 @@ from .forms import SubscribeForm
 from .models import ContactMessage
 from .forms import ComplianceForm
 from .models import ComplianceMessage
+from django.core.files.base import ContentFile
+import os
+from .models import Referral
+
 
 
 
@@ -214,16 +218,22 @@ def referral_view(request):
         if form.is_valid():
             referral_data = form.cleaned_data
             
+            # Generate the PDF
             pdf_content = generate_pdf(referral_data)
-            
-            email = EmailMessage(
-                subject="General Referral Form",
-                body="Please find the attached referral form.",
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                to=[settings.EMAIL_HOST_USER],  
+            pdf_filename = f"{referral_data['first_name']}_{referral_data['last_name']}_referral.pdf"
+
+            # Create a Referral instance
+            referral = Referral(
+                first_name=referral_data['first_name'],
+                last_name=referral_data['last_name'],
+                email=referral_data['email'],
+                date_of_birth=referral_data['date_of_birth'],
+                program_or_services=referral_data['program_or_services'],
             )
-            email.attach("referral_form.pdf", pdf_content, "application/pdf")
-            email.send()
+
+            # Save the PDF file to the model
+            referral.pdf_file.save(pdf_filename, ContentFile(pdf_content))
+            referral.save()
 
             return redirect('referral_success')
         else:

@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 class ReferralForm(forms.Form):
     first_name = forms.CharField(label="First Name", max_length=100)
     last_name = forms.CharField(label="Last Name", max_length=100)
+    email = forms.EmailField(label="Email Address")  # Add this field
     date_of_birth = forms.DateField(label="Date of Birth", widget=forms.DateInput(format='%d-%m-%Y', attrs={'placeholder': 'DD/MM/YYYY'}))
     program_or_services = forms.CharField(label="Program or Services Requested", max_length=255)
     insurance_company = forms.CharField(label="Insurance Company", max_length=255)

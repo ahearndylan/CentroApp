@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import ContactMessage
 from django.contrib import admin
 from .models import ComplianceMessage
+from .models import Referral
+
 
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
@@ -15,3 +17,9 @@ class ComplianceMessageAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email', 'created_at')
     search_fields = ('first_name', 'last_name', 'email')
     ordering = ('-created_at',)
+
+@admin.register(Referral)
+class ReferralAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email', 'created_at')
+    search_fields = ('first_name', 'last_name', 'email')
+    list_filter = ('created_at',)
