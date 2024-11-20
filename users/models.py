@@ -50,3 +50,16 @@ class Referral(models.Model):
         verbose_name = "Referral"
         verbose_name_plural = "Referrals"
         permissions = []  # Default permissions will be created automaticall
+
+class Subscriber(models.Model):
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        permissions = [
+            ("can_view_subscribers", "Can view subscribers"),
+        ]
+
+    def __str__(self):
+        return self.full_name

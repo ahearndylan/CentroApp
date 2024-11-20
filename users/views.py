@@ -20,6 +20,8 @@ from .models import ComplianceMessage
 from django.core.files.base import ContentFile
 import os
 from .models import Referral
+from .forms import SubscribeForm
+from .models import Subscriber
 
 
 
@@ -141,7 +143,7 @@ def compliance_view(request):
                 email=form.cleaned_data['email'],
                 message=form.cleaned_data['message'],
             )
-            return redirect('compliance_success')  # Redirect to a success page
+            return redirect('compliance_success')  
     else:
         form = ComplianceForm()
 
@@ -218,11 +220,9 @@ def referral_view(request):
         if form.is_valid():
             referral_data = form.cleaned_data
             
-            # Generate the PDF
             pdf_content = generate_pdf(referral_data)
             pdf_filename = f"{referral_data['first_name']}_{referral_data['last_name']}_referral.pdf"
 
-            # Create a Referral instance
             referral = Referral(
                 first_name=referral_data['first_name'],
                 last_name=referral_data['last_name'],
@@ -231,7 +231,6 @@ def referral_view(request):
                 program_or_services=referral_data['program_or_services'],
             )
 
-            # Save the PDF file to the model
             referral.pdf_file.save(pdf_filename, ContentFile(pdf_content))
             referral.save()
 
@@ -250,26 +249,27 @@ def subscribe_view(request):
     if request.method == "POST":
         form = SubscribeForm(request.POST)
         if form.is_valid():
-            full_name = form.cleaned_data['full_name']
             email = form.cleaned_data['email']
+            full_name = form.cleaned_data['full_name']
             
-            subject = "New Subscription Request"
-            message = f"Subscriber Name: {full_name}\nSubscriber Email: {email}"
-            recipient_email = 'contactcentroinc@gmail.com'
-
-            try:
-                send_mail(
-                    subject,
-                    message,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [recipient_email],
+            if Subscriber.objects.filter(email=email).exists():
+                return render(
+                    request,
+                    'base.html', 
+                    {"subscribe_form": form, "subscribe_error": "This email is already subscribed."}
                 )
-                return redirect('subscribe_success')
-            except Exception as e:
-                print(f"Error sending subscription email: {e}")
-                return HttpResponse("There was an error processing your subscription.")
+
+            Subscriber.objects.create(
+                full_name=full_name,
+                email=email
+            )
+            return redirect('subscribe_success')  
+        else:
+            return render(request, 'base.html', {"subscribe_form": form, "subscribe_errors": form.errors})
     else:
-        return HttpResponse("Invalid request.")
+        form = SubscribeForm()
+    return render(request, 'base.html', {"subscribe_form": form})
+
     
 def subscribe_success_view(request):
     return render(request, 'subscribe_success.html')

@@ -518,6 +518,7 @@
                     <a href="https://x.com/centroworcester?lang=en" target="_blank"><i class="fab fa-x-twitter"></i></a>
                 </div>
             
+            <!--
                 <div class="dropdown profile-dropdown-container">
                     <a class="profile-dropdown-toggle dropdown-toggle d-inline-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user-circle fa-2x"></i>
@@ -537,6 +538,7 @@
                         {% endif %}
                     </ul>
                 </div>
+                -->
             </div>
         </div>
     </div>
@@ -613,7 +615,7 @@
                     <i class="fab fa-cc-visa fa-2x mx-1"></i>
                     <i class="fab fa-cc-mastercard fa-2x mx-1"></i>
                     <i class="fab fa-cc-amex fa-2x mx-1"></i>
-                    <i class="fab fa-cc-paypal fa-2x mx-1"></i>
+                    <!--<i class="fab fa-cc-paypal fa-2x mx-1"></i>-->
                 </span>
             </div>
         </div>
@@ -674,9 +676,15 @@
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-arrow-right"></i>
                             </button>
-                        </form>                        
+                        </form>
+                        {% if subscribe_error %}
+                            <div class="alert alert-danger mt-2">
+                                {{ subscribe_error }}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
+                
             </div>
 
             <hr>
