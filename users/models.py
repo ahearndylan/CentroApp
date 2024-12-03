@@ -49,7 +49,7 @@ class Referral(models.Model):
     class Meta:
         verbose_name = "Referral"
         verbose_name_plural = "Referrals"
-        permissions = []  # Default permissions will be created automaticall
+        permissions = []  
 
 class Subscriber(models.Model):
     full_name = models.CharField(max_length=255)
