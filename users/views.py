@@ -26,7 +26,7 @@ from .models import CalendarImage, CalendarEvent
 from datetime import date
 from .models import Donor
 from .models import CentroStaff, BoardMember
-
+from .models import NewsArticle
 
 
 
@@ -306,3 +306,8 @@ def team(request):
         'board_members': board_members,
     }
     return render(request, 'team.html', context)
+
+
+def news(request):
+    dynamic_articles = NewsArticle.objects.all().order_by("-publish_date")
+    return render(request, 'news.html', {'dynamic_articles': dynamic_articles})

@@ -421,6 +421,58 @@ CENTRO | NEWS
     </div>
 </div>
 
+<div class="article-container">
+    {% for article in dynamic_articles %}
+    <div class="enhanced-article-window" onclick="openArticle('article-{{ article.id }}')">
+        <img src="{{ article.image.url }}" alt="{{ article.title }}" class="enhanced-article-image">
+        <div class="enhanced-article-content">
+            <div class="article-meta">
+                <i class="fas fa-user-circle user-icon"></i>
+                <div class="meta-info">
+                    <span class="username">{{ article.author }}</span>
+                    <span class="date-time">{{ article.publish_date|date:"M d, Y" }} · {{ article.read_time }}</span>
+                </div>
+            </div>
+            <hr class="divider-line">
+            <h3 class="article-quote">{{ article.quote }}</h3>
+            <p class="article-excerpt">{{ article.excerpt }}</p>
+        </div>
+    </div>
+    </div>
+
+    <div id="article-{{ article.id }}" class="full-article-popup">
+        <div class="full-article-content">
+            <span class="close-button" onclick="closeArticle('article-{{ article.id }}')">&times;</span>
+
+            <div class="popup-header">
+                <div class="article-meta">
+                    <i class="fas fa-user-circle user-icon"></i>
+                    <div class="meta-info">
+                        <span class="username"><strong>{{ article.author }}</strong></span>
+                        <span class="date-time">{{ article.publish_date|date:"M d, Y" }} · {{ article.read_time }}</span>
+                    </div>
+                </div>
+                <hr class="header-divider">
+            </div>
+
+            <div class="image-and-quote">
+                <h3 class="article-quote">{{ article.quote }}</h3>
+                <img src="{{ article.image.url }}" alt="Article Image" class="full-article-image">
+            </div>
+            <hr class="body-divider">
+
+            <div class="article-body">
+                {{ article.body|linebreaks }}
+                {% if article.external_link %}
+                <p>Source: <a href="{{ article.external_link }}" target="_blank">{{ article.external_link }}</a></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
 
 <style>
     .title-heading {

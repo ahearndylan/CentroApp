@@ -111,3 +111,17 @@ class BoardMember(models.Model):
     def __str__(self):
         return self.name
 
+
+class NewsArticle(models.Model):
+    title = models.CharField(max_length=255)
+    quote = models.TextField()
+    excerpt = models.TextField()
+    body = models.TextField()
+    author = models.CharField(max_length=100, default="vremos04")  
+    publish_date = models.DateField(auto_now_add=True)
+    read_time = models.CharField(max_length=50)  
+    image = models.ImageField(upload_to="news_images/")
+    external_link = models.URLField(blank=True, null=True)  
+
+    def __str__(self):
+        return self.title
