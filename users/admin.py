@@ -5,6 +5,7 @@ from .models import ComplianceMessage
 from .models import Referral
 from .models import Subscriber
 from .models import CalendarImage, CalendarEvent
+from .models import Donor
 
 
 
@@ -44,3 +45,10 @@ class CalendarEventAdmin(admin.ModelAdmin):
     list_display = ('date', 'title', 'description')
     search_fields = ('date', 'title')
     list_filter = ('date',)
+
+
+@admin.register(Donor)
+class DonorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'created_at')
+    search_fields = ('name',)
+    list_filter = ('created_at',)

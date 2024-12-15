@@ -80,3 +80,15 @@ class CalendarEvent(models.Model):
 
     def __str__(self):
         return f"{self.title} on {self.date}"
+    
+class Donor(models.Model):
+    name = models.CharField(max_length=100, help_text="Name of the donor")
+    logo = models.ImageField(upload_to="donor_logos/")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Donor Image"
+        verbose_name_plural = "Donor Images"

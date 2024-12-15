@@ -24,7 +24,7 @@ from .forms import SubscribeForm
 from .models import Subscriber
 from .models import CalendarImage, CalendarEvent
 from datetime import date
-
+from .models import Donor
 
 
 
@@ -290,3 +290,8 @@ def calendar(request):
         'current_month_events': current_month_events,
     }
     return render(request, 'calendar.html', context)
+
+
+def donate(request):
+    donor_images = Donor.objects.all()
+    return render(request, 'donate.html', {'donor_images': donor_images})

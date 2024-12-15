@@ -34,6 +34,12 @@ CENTRO | DONATE
         <div class="item"><img src="{% static 'img/donate20.png' %}" alt="Supporter 20"></div>
         <div class="item"><img src="{% static 'img/donate21.png' %}" alt="Supporter 21"></div>
         <div class="item"><img src="{% static 'img/donate1.jpg' %}" alt="Supporter 1"></div>
+    
+        {% for donor_image in donor_images %}
+            <div class="item">
+                <img src="{{ donor_image.logo.url }}" alt="{{ donor_image.name }}">
+            </div>
+        {% endfor %}
     </div>
 </div>
 
