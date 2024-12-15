@@ -4,6 +4,7 @@ from django.contrib import admin
 from .models import ComplianceMessage
 from .models import Referral
 from .models import Subscriber
+from .models import CalendarImage, CalendarEvent
 
 
 
@@ -31,3 +32,15 @@ class SubscriberAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'email', 'created_at')
     search_fields = ('full_name', 'email')
     list_filter = ('created_at',)
+
+@admin.register(CalendarImage)
+class CalendarImageAdmin(admin.ModelAdmin):
+    list_display = ('month', 'year', 'image')
+    search_fields = ('month', 'year')
+
+
+@admin.register(CalendarEvent)
+class CalendarEventAdmin(admin.ModelAdmin):
+    list_display = ('date', 'title', 'description')
+    search_fields = ('date', 'title')
+    list_filter = ('date',)

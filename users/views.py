@@ -22,6 +22,8 @@ import os
 from .models import Referral
 from .forms import SubscribeForm
 from .models import Subscriber
+from .models import CalendarImage, CalendarEvent
+from datetime import date
 
 
 
@@ -273,3 +275,18 @@ def subscribe_view(request):
     
 def subscribe_success_view(request):
     return render(request, 'subscribe_success.html')
+
+def calendar(request):
+    today = date.today()
+    current_month_image = CalendarImage.objects.filter(month=today.strftime("%B"), year=today.year).first()
+
+    current_month_events = CalendarEvent.objects.filter(
+        date__year=today.year,
+        date__month=today.month
+    )
+
+    context = {
+        'current_month_image': current_month_image,
+        'current_month_events': current_month_events,
+    }
+    return render(request, 'calendar.html', context)

@@ -63,3 +63,20 @@ class Subscriber(models.Model):
 
     def __str__(self):
         return self.full_name
+    
+class CalendarImage(models.Model):
+    month = models.CharField(max_length=20, unique=True)  
+    year = models.IntegerField()  
+    image = models.ImageField(upload_to='calendar_images/')  
+
+    def __str__(self):
+        return f"{self.month} {self.year}"
+
+
+class CalendarEvent(models.Model):
+    date = models.DateField(unique=True)  
+    title = models.CharField(max_length=100)  
+    description = models.TextField(blank=True, null=True) 
+
+    def __str__(self):
+        return f"{self.title} on {self.date}"
