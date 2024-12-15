@@ -6,6 +6,7 @@ from .models import Referral
 from .models import Subscriber
 from .models import CalendarImage, CalendarEvent
 from .models import Donor
+from .models import CentroStaff, BoardMember
 
 
 
@@ -52,3 +53,14 @@ class DonorAdmin(admin.ModelAdmin):
     list_display = ('name', 'created_at')
     search_fields = ('name',)
     list_filter = ('created_at',)
+
+@admin.register(CentroStaff)
+class CentroStaffAdmin(admin.ModelAdmin):
+    list_display = ('name', 'title', 'created_at')
+    search_fields = ('name', 'title')
+
+
+@admin.register(BoardMember)
+class BoardMemberAdmin(admin.ModelAdmin):
+    list_display = ('name', 'title', 'created_at')
+    search_fields = ('name', 'title')

@@ -15,124 +15,19 @@ CENTRO | TEAM
         <div class="col-lg-8 pr-lg-5">
             <h3 class="mb-4 font-weight-bold" style="color: #0056b3;">CENTRO Central Staff</h3>
             <div class="row">
+                {% for staff in staff_members %}
                 <div class="col-md-6 mb-4">
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="{% static 'img/team1.jpg' %}" alt="Agustina Velazquez">
+                            <img src="{{ staff.headshot.url }}" alt="{{ staff.name }}">
                         </div>
                         <div class="staff-info">
-                            <h5>Agustina Velazquez</h5>
-                            <p>Interim President & Chief Executive Officer</p>
+                            <h5>{{ staff.name }}</h5>
+                            <p>{{ staff.title }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="staff-card">
-                        <div class="staff-image">
-                            <img src="{% static 'img/team2.jpg' %}" alt="Noelia Martinez">
-                        </div>
-                        <div class="staff-info">
-                            <h5>Noelia Martinez</h5>
-                            <p>Assistant Director of Training & Corporate Compliance <br> Human Rights Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="staff-card">
-                        <div class="staff-image">
-                            <img src="{% static 'img/team3.jpg' %}" alt="Noelia Martinez">
-                        </div>
-                        <div class="staff-info">
-                            <h5>Timothy Kirby</h5>
-                            <p>VP & Cheif Finincial Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="staff-card">
-                        <div class="staff-image">
-                            <img src="{% static 'img/team5.jpg' %}" alt="Noelia Martinez">
-                        </div>
-                        <div class="staff-info">
-                            <h5>Mayerling De La Rosa, MS</h5>
-                            <p>Director of COmmunity Support & Strategic Initiatives</p>
-                        </div>
-                    </div>
-                </div>
-<!--
-                <div class="col-md-6 mb-4">
-                    <div class="staff-card">
-                        <div class="staff-image">
-                            <img src="{% static 'img/team4.jpg' %}" alt="Noelia Martinez">
-                        </div>
-                        <div class="staff-info">
-                            <h5>Nelida Machicote</h5>
-                            <p>VP & Chief of Programs</p>
-                        </div>
-                    </div>
-                </div>
--->
-                <div class="col-md-6 mb-4">
-                    <div class="staff-card">
-                        <div class="staff-image">
-                            <img src="{% static 'img/team6.jpg' %}" alt="Noelia Martinez">
-                        </div>
-                        <div class="staff-info">
-                            <h5>Ixchel Tattersall-Malaver</h5>
-                            <p>Director of Family Support & Stablization</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="staff-card">
-                        <div class="staff-image">
-                            <img src="{% static 'img/team7.jpg' %}" alt="Noelia Martinez">
-                        </div>
-                        <div class="staff-info">
-                            <h5>Indhira Rodriguez</h5>
-                            <p>Director of Human Resources</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="staff-card">
-                        <div class="staff-image">
-                            <img src="{% static 'img/team8.jpg' %}" alt="Noelia Martinez">
-                        </div>
-                        <div class="staff-info">
-                            <h5>Marielly Rossy</h5>
-                            <p>Program Director of AFC & GAFC</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="staff-card">
-                        <div class="staff-image">
-                            <img src="{% static 'img/team99.jpg' %}" alt="Noelia Martinez">
-                        </div>
-                        <div class="staff-info">
-                            <h5>Valeria Ramos Rodriguez</h5>
-                            <p>Executive Assistant to the CEO & Marketing Coordinator</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="staff-card">
-                        <div class="staff-image">
-                            <img src="{% static 'img/team10.jpg' %}" alt="Noelia Martinez">
-                        </div>
-                        <div class="staff-info">
-                            <h5>Cristian Rivera Velez</h5>
-                            <p>Assistant Director of AFC & GAFC</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
    
@@ -142,56 +37,12 @@ CENTRO | TEAM
             <div class="board-section">
                 <h4 class="mb-4 font-weight-bold" style="color: #0056b3;">Board of Directors</h4>
                 <ul class="list-group border-0">
-                    
+                    {% for board in board_members %}
                     <li class="list-group-item director-item mb-3">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Columbus N. Okai</h5>
-                        <p class="m-0" style="color: #e7833c;">Chairman</p>
+                        <h5 class="font-weight-bold" style="color: #0056b3;">{{ board.name }}</h5>
+                        <p class="m-0" style="color: #e7833c;">{{ board.title }}</p>
                     </li>
-                    <li class="list-group-item director-item mb-3">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Noel Nieves</h5>
-                        <p class="m-0" style="color: #e7833c;">Treasurer</p>
-                    </li>
-                    <li class="list-group-item director-item mb-3">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">George Cox</h5>
-                        <p class="m-0" style="color: #e7833c;">Clerk/Secretary</p>
-                    </li>
-                    <li class="list-group-item director-item">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Agustina Velazquez</h5>
-                        <p class="m-0" style="color: #e7833c;">Interim President & CEO</p>
-                    </li>
-                    <li class="list-group-item director-item">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Maury Ramirez</h5>
-                        <p class="m-0" style="color: #e7833c;">Assistant Treasurer</p>
-                    </li>
-                    
-                    <li class="list-group-item director-item">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Atty. Maria Rivera Scozzafava</h5>
-                        <p class="m-0" style="color: #e7833c;">Board Member</p>
-                    </li>
-                    <li class="list-group-item director-item">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Bruce A. Rawan</h5>
-                        <p class="m-0" style="color: #e7833c;">Board Member</p>
-                    </li>
-                    <li class="list-group-item director-item">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Dr. Tracey Capers</h5>
-                        <p class="m-0" style="color: #e7833c;">Board Member</p>
-                    </li>
-                    <li class="list-group-item director-item">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Dr. Maria M. Knight</h5>
-                        <p class="m-0" style="color: #e7833c;">Board Member</p>
-                    </li>
-                    <li class="list-group-item director-item">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Dr. Terrance Gibson</h5>
-                        <p class="m-0" style="color: #e7833c;">Board Member</p>
-                    </li>
-                    <li class="list-group-item director-item">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Atty. Randy Feldman</h5>
-                        <p class="m-0" style="color: #e7833c;">Board Member</p>
-                    </li>
-                    <li class="list-group-item director-item">
-                        <h5 class="font-weight-bold" style="color: #0056b3;">Walter J.E. Weekes, Sr.</h5>
-                        <p class="m-0" style="color: #e7833c;">Board Member</p>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

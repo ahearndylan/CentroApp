@@ -25,6 +25,8 @@ from .models import Subscriber
 from .models import CalendarImage, CalendarEvent
 from datetime import date
 from .models import Donor
+from .models import CentroStaff, BoardMember
+
 
 
 
@@ -295,3 +297,12 @@ def calendar(request):
 def donate(request):
     donor_images = Donor.objects.all()
     return render(request, 'donate.html', {'donor_images': donor_images})
+
+def team(request):
+    staff_members = CentroStaff.objects.all()
+    board_members = BoardMember.objects.all()
+    context = {
+        'staff_members': staff_members,
+        'board_members': board_members,
+    }
+    return render(request, 'team.html', context)
