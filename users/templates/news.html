@@ -420,7 +420,7 @@ CENTRO | NEWS
         </div>
     </div>
 </div>
-
+<!-- ✅ Move article-container OUTSIDE the loop -->
 <div class="article-container">
     {% for article in dynamic_articles %}
     <div class="enhanced-article-window" onclick="openArticle('article-{{ article.id }}')">
@@ -438,12 +438,11 @@ CENTRO | NEWS
             <p class="article-excerpt">{{ article.excerpt }}</p>
         </div>
     </div>
-    </div>
 
+    <!-- Full article popup -->
     <div id="article-{{ article.id }}" class="full-article-popup">
         <div class="full-article-content">
             <span class="close-button" onclick="closeArticle('article-{{ article.id }}')">&times;</span>
-
             <div class="popup-header">
                 <div class="article-meta">
                     <i class="fas fa-user-circle user-icon"></i>
@@ -454,13 +453,11 @@ CENTRO | NEWS
                 </div>
                 <hr class="header-divider">
             </div>
-
             <div class="image-and-quote">
                 <h3 class="article-quote">{{ article.quote }}</h3>
                 <img src="{{ article.image.url }}" alt="Article Image" class="full-article-image">
             </div>
             <hr class="body-divider">
-
             <div class="article-body">
                 {{ article.body|safe }}
                 {% if article.external_link %}
