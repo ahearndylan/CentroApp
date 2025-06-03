@@ -462,7 +462,7 @@ CENTRO | NEWS
             <hr class="body-divider">
 
             <div class="article-body">
-                {{ article.body|linebreaks }}
+                {{ article.body|safe }}
                 {% if article.external_link %}
                 <p>Source: <a href="{{ article.external_link }}" target="_blank">{{ article.external_link }}</a></p>
                 {% endif %}
