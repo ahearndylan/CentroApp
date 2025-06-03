@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class ComplianceMessage(models.Model):
@@ -116,7 +117,7 @@ class NewsArticle(models.Model):
     title = models.CharField(max_length=255)
     quote = models.TextField()
     excerpt = models.TextField()
-    body = models.TextField()
+    body = RichTextField()
     author = models.CharField(max_length=100, default="vremos04")  
     publish_date = models.DateField(default=None, null=True, blank=True)
     read_time = models.CharField(max_length=50)  
