@@ -17,7 +17,7 @@ CENTRO | NEWS
 </div>
 
 <br>
-
+<!--
 <div class="article-container">
     <div class="enhanced-article-window" onclick="openArticle('article1')">
         <img src="{% static 'img/news1.jpg' %}" alt="Black History Month" class="enhanced-article-image">
@@ -420,6 +420,7 @@ CENTRO | NEWS
         </div>
     </div>
 </div>
+-->
 <!-- ✅ Move article-container OUTSIDE the loop -->
 <div class="article-container">
     {% for article in dynamic_articles %}
@@ -509,7 +510,9 @@ CENTRO | NEWS
 
     .article-container {
         display: flex;
-        justify-content: center;
+        flex-direction: column;  /* 👈 Stack vertically */
+        align-items: center;     /* 👈 Center each article block */
+        gap: 30px;               /* Optional: space between articles */
         margin-bottom: 40px;
     }
 
