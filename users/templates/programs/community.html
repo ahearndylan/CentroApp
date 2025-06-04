@@ -94,22 +94,25 @@ CENTRO | COMMUNITY SUPPORT SERVICES
                 <div class="col-md-8 text-center">
                     <h3 class="text-primary fw-bold">Contact Information</h3>
                     <p class="text-muted">For more information on this program or to register as a volunteer, please contact:</p>
+                    {% if contact %}
                     <ul class="list-unstyled">
                         <li class="mb-3">
-                            <h5 class="fw-bold mb-1">Yokasta Lopez</h5>
-                            <span class="text-muted">Community Support Coordinator</span>
+                            <h5 class="fw-bold mb-1">{{ contact.name }}</h5>
+                            <span class="text-muted">{{ contact.role }}</span>
                         </li>
                         <li class="mb-3">
                             <i class="fas fa-phone-alt me-2 text-success"></i>
                             <span class="fw-bold">Phone:</span> 
-                            <a href="tel:+15087981900" class="text-decoration-none text-primary">508-798-1900 Ext 260</a>
+                            <a href="tel:{{ contact.phone }}" class="text-decoration-none text-primary">{{ contact.phone }}</a>
                         </li>
                         <li class="mb-3">
                             <i class="fas fa-envelope me-2 text-success"></i>
                             <span class="fw-bold">Email:</span>
-                            <a href="mailto:ylopez@centroinc.org" class="text-decoration-none text-primary">ylopez@centroinc.org</a>
+                            <a href="mailto:{{ contact.email }}" class="text-decoration-none text-primary">{{ contact.email }}</a>
                         </li>
                     </ul>
+                    {% endif %}
+
                 </div>
             </div>
         </div>

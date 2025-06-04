@@ -8,6 +8,18 @@ from .models import CalendarImage, CalendarEvent
 from .models import Donor
 from .models import CentroStaff, BoardMember
 from .models import NewsArticle
+from .models import PartnerLogo
+from .models import Review
+from .models import FoodPantryLocation
+from .models import CommunitySupportContact
+from .models import FamilySupportHours
+from .models import FamilySupportContact
+from .models import ChildrenServicesContact
+from .models import NACDCContact, NACDCBoardMember
+from .models import HousingCounselorContact
+from .models import RebuildingTestimonial
+
+
 
 
 @admin.register(ContactMessage)
@@ -71,3 +83,57 @@ class NewsArticleAdmin(admin.ModelAdmin):
     list_display = ("title", "author", "publish_date")
     search_fields = ("title", "author")
     ordering = ("-publish_date",)
+
+@admin.register(PartnerLogo)
+class PartnerLogoAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ('name',)
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('author', 'stars', 'created_at')
+    search_fields = ('author', 'text')
+    ordering = ('-created_at',)
+
+@admin.register(FoodPantryLocation)
+class FoodPantryLocationAdmin(admin.ModelAdmin):
+    list_display = ['name', 'address', 'days_hours', 'order']
+    ordering = ['order']
+
+@admin.register(CommunitySupportContact)
+class CommunitySupportContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'role', 'phone', 'email')
+    search_fields = ('name', 'role', 'email')
+
+@admin.register(FamilySupportHours)
+class FamilySupportHoursAdmin(admin.ModelAdmin):
+    list_display = ('location', 'days', 'time')
+
+@admin.register(FamilySupportContact)
+class FamilySupportContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'location', 'position', 'phone', 'email')
+
+@admin.register(ChildrenServicesContact)
+class ChildrenServicesContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'position', 'phone', 'email')
+
+
+@admin.register(NACDCContact)
+class NACDCContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'title', 'phone', 'email')
+
+
+@admin.register(NACDCBoardMember)
+class NACDCBoardMemberAdmin(admin.ModelAdmin):
+    list_display = ('name', 'title')
+
+@admin.register(HousingCounselorContact)
+class HousingCounselorContactAdmin(admin.ModelAdmin):
+    list_display = ('phone', 'email')
+
+
+@admin.register(RebuildingTestimonial)
+class RebuildingTestimonialAdmin(admin.ModelAdmin):
+    list_display = ('name', 'quote', 'created_at')
+    search_fields = ('name', 'quote')
+    ordering = ('-created_at',)

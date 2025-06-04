@@ -66,13 +66,16 @@ CENTRO | CHILDREN & FAMILY SERVICES
     </div>
 </div>
 
+{% if contact %}
 <div class="contact-info-card">
     <h2>Contact Information</h2>
-    <p><strong>Ixchel Tattersall-Malaver</strong></p>
-    <p>Director of Case Management Services</p>
-    <p>508-798-1900 Ext 452</p>
-    <p><a href="mailto:itattersall@centroinc.org">itattersall@centroinc.org</a></p>
+    <p><strong>{{ contact.name }}</strong></p>
+    <p>{{ contact.position }}</p>
+    <p>{{ contact.phone }}</p>
+    <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
 </div>
+{% endif %}
+
 
 <br>
 

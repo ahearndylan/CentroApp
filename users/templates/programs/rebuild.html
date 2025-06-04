@@ -163,6 +163,22 @@ CENTRO | REBUILDING FUTURES
 
 <div class="container mt-5">
     <div class="owl-carousel owl-theme">
+        {% for testimonial in testimonials %}
+        <div class="item">
+            <div class="testimonial-content text-center">
+                <blockquote class="blockquote">
+                    <p class="mb-0">{{ testimonial.quote }}</p>
+                </blockquote>
+                <footer class="blockquote-footer">{{ testimonial.name }}</footer>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!--
+<div class="container mt-5">
+    <div class="owl-carousel owl-theme">
         <div class="item">
             <div class="testimonial-content text-center">
                 <blockquote class="blockquote">
@@ -207,6 +223,9 @@ CENTRO | REBUILDING FUTURES
         </div>
     </div>
 </div>
+-->
+
+
 <br>
 <br>
 <br>

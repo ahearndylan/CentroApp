@@ -86,6 +86,32 @@ CENTRO | HOME
 <section>
     <div class="container py-5">
         <div class="row justify-content-center">
+            {% for article in news_articles %}
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'news' %}#article{{ article.id }}" onclick="openArticle('article{{ article.id }}')" class="article-preview" style="text-decoration: none;">
+                    <div class="card">
+                        {% if article.image %}
+                            <img src="{{ article.image.url }}" class="card-img-top" alt="{{ article.title }}">
+                        {% else %}
+                            <img src="{% static 'img/default-news.jpg' %}" class="card-img-top" alt="News">
+                        {% endif %}
+                        <div class="card-body">
+                            <p class="text-muted mb-1">{{ article.publish_date|date:"M d, Y" }} · {{ article.read_time }}</p>
+                            <h5 class="card-title">{{ article.title }}</h5>
+                            <p class="card-text">{{ article.excerpt|truncatechars:120 }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--
+<section>
+    <div class="container py-5">
+        <div class="row justify-content-center">
             <div class="col-md-3 mb-4">
                 <a href="{% url 'news' %}#article1" onclick="openArticle('article1')" class="article-preview" style="text-decoration: none;">
                     <div class="card">
@@ -143,6 +169,7 @@ CENTRO | HOME
         </div>
     </div>
 </section>
+-->
 
 
 <section class="partners-section py-5">
@@ -150,29 +177,40 @@ CENTRO | HOME
         <h2 class="text-center mb-4" style="color: #0066cc; font-size: 1.5rem;">SPECIAL THANKS TO OUR PARTNERS, ASSOCIATES & FRIENDS</h2>
         <p class="text-center" style="font-size: 1rem; color: #333;">We value your help throughout the years.</p>
         <div class="row justify-content-around text-center align-items-center">
-            <!-- Partner 1 -->
+            {% for logo in partner_logos %}
+                <div class="col-6 col-md-2 mb-4">
+                    <img src="{{ logo.image.url }}" alt="{{ logo.name }}" class="img-fluid" style="max-height: 120px;">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--
+<section class="partners-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #0066cc; font-size: 1.5rem;">SPECIAL THANKS TO OUR PARTNERS, ASSOCIATES & FRIENDS</h2>
+        <p class="text-center" style="font-size: 1rem; color: #333;">We value your help throughout the years.</p>
+        <div class="row justify-content-around text-center align-items-center">
             <div class="col-6 col-md-2 mb-4">
                 <img src="{% static 'img/partner4.jpeg' %}" alt="Partner 1" class="img-fluid" style="max-height: 120px;">
             </div>
-            <!-- Partner 2 -->
             <div class="col-6 col-md-2 mb-4">
                 <img src="{% static 'img/partner3.png' %}" alt="Partner 2" class="img-fluid" style="max-height: 120px;">
             </div>
-            <!-- Partner 3 -->
             <div class="col-6 col-md-2 mb-4">
                 <img src="{% static 'img/partner5.png' %}" alt="Partner 3" class="img-fluid" style="max-height: 120px;">
             </div>
-            <!-- Partner 4 -->
             <div class="col-6 col-md-2 mb-4">
                 <img src="{% static 'img/partner2.png' %}" alt="Partner 4" class="img-fluid" style="max-height: 120px;">
             </div>
-            <!-- Partner 5 -->
             <div class="col-6 col-md-2 mb-4">
                 <img src="{% static 'img/partner1.jpeg' %}" alt="Partner 5" class="img-fluid" style="max-height: 120px;">
             </div>
         </div>
     </div>
 </section>
+-->
 
 <section class="expanding-our-reach py-5">
     <div class="container-fluid">
@@ -420,9 +458,34 @@ CENTRO | HOME
 </div>
 
 
+
+
+
 <section class="reviews-section py-5">
     <div class="container">
         <h2 class="text-center mb-4" style="color: #0066cc; font-size: 2rem; font-weight: bold;">What People Are Saying</h2>
+        <div class="owl-carousel owl-theme">
+            {% for review in reviews %}
+            <div class="review-item p-4" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; background-color: #f9f9f9;">
+                <div class="stars mb-3">
+                    {% for i in "12345"|slice:":review.stars"|make_list %}
+                        <i class="fas fa-star" style="color: #f4c430;"></i>
+                    {% endfor %}
+                </div>
+                <p class="review-text" style="font-size: 1.2rem; line-height: 1.5; color: #333;">
+                    "{{ review.text }}"
+                </p>
+                <p class="review-author text-end mt-3" style="font-size: 1rem; font-weight: bold; color: #0066cc;">– {{ review.author }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        
+        
+        
+        
+        
+        
+        <!--
         <div class="owl-carousel owl-theme">
             <div class="review-item p-4" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; background-color: #f9f9f9;">
                 <div class="stars mb-3">
@@ -521,6 +584,7 @@ CENTRO | HOME
                 </p>
                 <p class="review-author text-end mt-3" style="font-size: 1rem; font-weight: bold; color: #0066cc;">– Jessica Colon</p>
             </div>
+        -->
         </div>
         <div class="owl-navigation text-center mt-3">
             <button class="owl-prev" style="background: #0066cc; color: white; border: none; padding: 10px 15px; border-radius: 50%; margin-right: 10px; font-size: 1.5rem; cursor: pointer;">

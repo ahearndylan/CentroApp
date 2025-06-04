@@ -142,6 +142,18 @@ CENTRO | HOMEOWNERSHIP
 
         <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center align-items-center text-center shadow p-4 rounded">
             <h3 class="font-weight-bold mb-4" style="color: #f39c86;">To speak with one of our Housing Counselors,</h3>
+            
+            {% if contact %}
+            <p class="lead" style="color: #0056b3; font-weight: bold;">
+                Call <a href="tel:{{ contact.phone }}" style="text-decoration: underline; color: #0056b3;">{{ contact.phone }}</a>
+            </p>
+            <p class="lead" style="color: #000; font-weight: bold;">or</p>
+            <p class="lead" style="color: #f39c86; font-weight: bold;">
+                Email <a href="mailto:{{ contact.email }}" style="text-decoration: underline; color: #0056b3;">{{ contact.email }}</a>
+            </p>
+            {% endif %}
+
+            <!--
             <p class="lead" style="color: #0056b3; font-weight: bold;">
                 Call <a href="tel:508-798-1900" style="text-decoration: underline; color: #0056b3;">508-798-1900</a>
             </p>
@@ -149,6 +161,8 @@ CENTRO | HOMEOWNERSHIP
             <p class="lead" style="color: #f39c86; font-weight: bold;">
                 Email <a href="mailto:homeowner@centroinc.org" style="text-decoration: underline; color: #0056b3;">homeowner@centroinc.org</a>
             </p>
+        -->
+
         </div>
     </div>
 </section>

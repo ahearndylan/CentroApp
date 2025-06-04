@@ -35,12 +35,26 @@ CENTRO | NACDC
         <img src="{% static 'img/nacdcseal1.png' %}" alt="NACDC Logo" class="nacdc-logo">
         <h3 class="section-title"><strong>WHY THE "MAIN MIDDLE?"</strong></h3>
         <p class="more-info">For more information, please contact:</p>
+        {% if contact %}
+        <p class="contact-name"><strong>{{ contact.name }}</strong><br>
+            {{ contact.title }}<br>
+            {{ contact.phone }}<br>
+            <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+        <a href="{{ contact.link_1_url }}" class="contact-link2">{{ contact.link_1_text }}</a><br>
+        <a href="{{ contact.link_2_url }}" class="contact-link">{{ contact.link_2_text }}</a>
+        {% endif %}
+
+
+        <!--
         <p class="contact-name"><strong>Robert L. Thomas</strong><br>
             President and Director of NACDC<br>
             508-798-1900, Ext 229/ 508-798-255<br>
             rthomas@centroinc.org</p>
         <a href="#" class="contact-link2">Submission of Written Testimony on Urban Revitalization Plan</a><br>
         <a href="#" class="contact-link">The NACDC Brown Paper</a>
+        -->
+
+
     </div>
     <div class="main-middle-text">
         <p>A tremendous amount of great work has taken place all around our designated area but, no concentrated effort in the “Main Middle”. The NACDC has begun that concentration by purchasing 3 small parcels, (14, 16, and 18 Sycamore); one manufacturing building (47 Hermon Street) and negotiating with property owners to acquire their properties for renovation (701 Main, 1, 5 and 9 Sycamore). A team of community members, business owners, city officials, social workers, clients, architects, and engineers worked closely with NACDC’s parent company to determine next steps to continue to provide the much-needed services our constituents, demand. The NACDC was born out of a community of color’s demand for revitalizing their neighborhood. So, for the last twelve months, the NACDC has been dotting the I’s and crossing the T’s necessary to become the minority-owned and operated CDC to provide training, business ownership, jobs homeownership and housing for New Americans.</p>
@@ -55,6 +69,16 @@ CENTRO | NACDC
     </div>
     <div class="board-info">
         <h3 class="board-title">NACDC Board of Directors</h3>
+        
+        <ul class="board-list">
+            {% for member in board_members %}
+                <li>{{ member.name }} - {{ member.title }}</li>
+            {% endfor %}
+        </ul>
+
+
+
+        <!--
         <ul class="board-list">
             <li>Robert L. Thomas - President and Director</li>
             <li>Kristine King - Treasurer and Director</li>
@@ -63,6 +87,7 @@ CENTRO | NACDC
             <li>George Cox - Director</li>
             <li>Michael Jerry - Director</li>
         </ul>
+        -->
     </div>
 </div>
 

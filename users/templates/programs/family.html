@@ -112,7 +112,15 @@ CENTRO | FAMILY SUPPORT SERVICES
             <img src="{% static 'img/family10.jpg' %}" class="img-fluid mb-4 rounded" alt="Family Support">
             <p>Our Family Support Centers welcome members of the community on a walk-in basis and provide information, referrals, and other services.</p>
             <p>The Family Support Center Program is funded by the Department of Developmental Services (DDS). DDS provides children and adults with developmental disabilities and their families support, information, and the tools to envision a life lived to the fullest. CENTRO offers this program to all DDS eligible individuals. We specialize our services toward multicultural and diverse families in the communities of Worcester County.</p>
-            <p class="hours">Worcester (Central) Hours:<br>Monday – Friday<br>9:00 AM – 5:00 PM</p>
+            <!--<p class="hours">Worcester (Central) Hours:<br>Monday – Friday<br>9:00 AM – 5:00 PM</p>-->
+            {% if support_hours %}
+            <p class="hours">
+                {{ support_hours.location }} Hours:<br>
+                {{ support_hours.days }}<br>
+                {{ support_hours.time }}
+            </p>
+            {% endif %}
+
             <a href="{% url 'calendar' %}" class="calendar-link">
                 <i class="fas fa-calendar-alt calendar-icon"></i><br>CLICK HERE FOR MONTHLY ACTIVITIES
             </a>
@@ -148,15 +156,18 @@ CENTRO | FAMILY SUPPORT SERVICES
     </div>
 
     <!-- Contact Information Section -->
+    {% if contact %}
     <div class="contact-section text-center">
         <h3 class="contact-title">CONTACT INFORMATION</h3>
         <div class="contact-info mt-3">
-            <p class="location">Worcester</p>
-            <p class="name">Mayerling De La Rosa, MS</p>
-            <p class="position">Director of Community Support & Strategic Initiatives</p>
-            <p class="phone">508-798-1900</p>
-            <p class="email">Familyservices@centroinc.org</p>
+            <p class="location">{{ contact.location }}</p>
+            <p class="name">{{ contact.name }}</p>
+            <p class="position">{{ contact.position }}</p>
+            <p class="phone">{{ contact.phone }}</p>
+            <p class="email">{{ contact.email }}</p>
         </div>
     </div>
+    {% endif %}
+
 </div>
 {% endblock %}

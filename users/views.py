@@ -27,11 +27,22 @@ from datetime import date
 from .models import Donor
 from .models import CentroStaff, BoardMember
 from .models import NewsArticle
+from .models import PartnerLogo
+from .models import Review
+from .models import FoodPantryLocation
+from .models import CommunitySupportContact
+from .models import FamilySupportHours
+from .models import FamilySupportContact
+from .models import ChildrenServicesContact
+from .models import NACDCContact, NACDCBoardMember
+from .models import HousingCounselorContact
+from .models import RebuildingTestimonial
 
 
 
-def home(request):
-    return render(request, 'home.html')
+
+#def home(request):
+    #return render(request, 'home.html')
 
 def register(request):
     if request.method == 'POST':
@@ -78,35 +89,35 @@ def compliance(request):
 def referral(request):
     return render(request, 'forms/referral.html')
 
-def children(request):
-    return render(request, 'programs/children.html')
+#def children(request):
+    #return render(request, 'programs/children.html')
 
 def community(request):
     return render(request, 'programs/community.html')
 
-def family(request):
-    return render(request, 'programs/family.html')
+#def family(request):
+    #return render(request, 'programs/family.html')
 
 def financial(request):
     return render(request, 'programs/financial.html')
 
-def food(request):
-    return render(request, 'programs/food.html')
+#def food(request):
+    #return render(request, 'programs/food.html')
 
 def foster(request):
     return render(request, 'programs/foster.html')
 
-def homeowner(request):
-    return render(request, 'programs/homeowner.html')
+#def homeowner(request):
+    #return render(request, 'programs/homeowner.html')
 
 def ilac(request):
     return render(request, 'programs/ilac.html')
 
-def nacdc(request):
-    return render(request, 'programs/nacdc.html')
+#def nacdc(request):
+    #return render(request, 'programs/nacdc.html')
 
-def rebuild(request):
-    return render(request, 'programs/rebuild.html')
+#def rebuild(request):
+    #return render(request, 'programs/rebuild.html')
 
 def contact(request):
     return render(request, 'contact.html')
@@ -311,3 +322,56 @@ def team(request):
 def news(request):
     dynamic_articles = NewsArticle.objects.all().order_by("-publish_date")
     return render(request, 'news.html', {'dynamic_articles': dynamic_articles})
+
+def home(request):
+    logos = PartnerLogo.objects.all()[:5]
+    reviews = Review.objects.all().order_by('-created_at')  # optional limit: [:10]
+    news_articles = NewsArticle.objects.filter(featured_on_homepage=True)[:4]
+
+    return render(request, 'home.html', {
+        'partner_logos': logos,
+        'reviews': reviews,
+        'news_articles': news_articles,
+    })
+
+def food(request):
+    locations = FoodPantryLocation.objects.order_by('order')
+    return render(request, 'programs/food.html', {
+        'locations': locations,
+    })
+
+def community(request):
+    contact = CommunitySupportContact.objects.first()
+    return render(request, 'programs/community.html', {'contact': contact})
+
+def family(request):
+    hours = FamilySupportHours.objects.first()
+    contact = FamilySupportContact.objects.first()
+    return render(request, 'programs/family.html', {
+        'support_hours': hours,
+        'contact': contact
+    })
+
+def children(request):
+    contact = ChildrenServicesContact.objects.first()
+    return render(request, 'programs/children.html', {
+        'contact': contact
+    })
+
+def nacdc(request):
+    contact = NACDCContact.objects.first()
+    board_members = NACDCBoardMember.objects.all()
+    return render(request, 'programs/nacdc.html', {
+        'contact': contact,
+        'board_members': board_members,
+    })
+
+def homeowner(request):
+    contact = HousingCounselorContact.objects.first()
+    return render(request, 'programs/homeowner.html', {
+        'contact': contact
+    })
+
+def rebuild(request):
+    testimonials = RebuildingTestimonial.objects.order_by('-created_at')
+    return render(request, 'programs/rebuild.html', {'testimonials': testimonials})
