@@ -229,3 +229,10 @@ class RebuildingTestimonial(models.Model):
 
     def __str__(self):
         return self.name
+    
+class ILACImage(models.Model):
+    image = models.ImageField(upload_to='ilac_images/')
+    caption = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return self.caption or f"ILAC Image {self.id}"

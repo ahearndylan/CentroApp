@@ -37,6 +37,7 @@ from .models import ChildrenServicesContact
 from .models import NACDCContact, NACDCBoardMember
 from .models import HousingCounselorContact
 from .models import RebuildingTestimonial
+from .models import ILACImage
 
 
 
@@ -110,8 +111,8 @@ def foster(request):
 #def homeowner(request):
     #return render(request, 'programs/homeowner.html')
 
-def ilac(request):
-    return render(request, 'programs/ilac.html')
+#def ilac(request):
+    #return render(request, 'programs/ilac.html')
 
 #def nacdc(request):
     #return render(request, 'programs/nacdc.html')
@@ -375,3 +376,7 @@ def homeowner(request):
 def rebuild(request):
     testimonials = RebuildingTestimonial.objects.order_by('-created_at')
     return render(request, 'programs/rebuild.html', {'testimonials': testimonials})
+
+def ilac(request):
+    ilac_images = ILACImage.objects.all()
+    return render(request, 'programs/ilac.html', {'ilac_images': ilac_images})

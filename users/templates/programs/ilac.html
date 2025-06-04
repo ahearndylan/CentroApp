@@ -10,6 +10,38 @@ CENTRO | ILAC
     INSTITUTE OF <span class="title-highlight">LATINO ARTS</span> & CULTURE (ILAC)
 </h2>
 
+<div class="container mt-5">
+    <div class="owl-carousel owl-theme">
+        {% for img in ilac_images %}
+            <div class="item">
+                <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="card-container mt-5">
+    <p>Funded primarily with event sponsorship dollars and small grants, the Institute of Latino Arts & Culture (ILAC) is responsible for sharing our heritage, art, and culture with the general community. The Institute coordinates and implements several culturally-rich events throughout the year.</p>
+    
+    <h3>These include the followings:</h3>
+    <ul>
+        <li>Latin-American Festival</li>
+        <li>Hispanic Heritage Breakfast</li>
+    </ul>
+
+    <p>
+        <span class="highlight-text">The Latin-American Festival</span> is held on the 3rd Saturday in August on the Worcester Common, behind Worcester City Hall.
+    </p>
+</div>
+<br>
+<br>
+<br>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
 <style>
     .title-heading {
         color: #ffffff;
@@ -65,20 +97,38 @@ CENTRO | ILAC
         text-decoration: none;
     }
 
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 0 20px;
+    .owl-carousel .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
     }
 
-    .gallery img {
-        width: 100%;
-        height: auto;
+    .owl-carousel .item img {
+        width: 90%;
+        max-height: 250px;
+        object-fit: cover;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .owl-dots {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .owl-dot {
+        height: 16px;
+        width: 16px;
+        margin: 6px;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: #bbb;
+        transition: background-color 0.3s;
+    }
+
+    .owl-dot.active {
+        background-color: #0056b3;
     }
 
     @media (max-width: 768px) {
@@ -90,43 +140,28 @@ CENTRO | ILAC
         .card-container {
             padding: 15px;
         }
-
-        .gallery {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .gallery {
-            grid-template-columns: 1fr;
-        }
     }
 </style>
+{% endblock %}
 
-<div class="card-container">
-    <p>Funded primarily with event sponsorship dollars and small grants, the Institute of Latino Arts & Culture (ILAC) is responsible for sharing our heritage, art, and culture with the general community. The Institute coordinates and implements several culturally-rich events throughout the year.</p>
-    
-    <h3>These include the followings:</h3>
-    <ul>
-        <li>Latin-American Festival</li>
-        <li>Hispanic Heritage Breakfast</li>
-    </ul>
-
-    <p>
-        <span class="highlight-text">The Latin-American Festival</span> is held on the 3rd Saturday in August on the Worcester Common, behind Worcester City Hall.
-    </p>
-</div>
-
-<div class="gallery">
-    <img src="{% static 'img/ilac1.jpg' %}" alt="Image 1">
-    <img src="{% static 'img/ilac2.jpg' %}" alt="Image 2">
-    <img src="{% static 'img/ilac3.jpg' %}" alt="Image 3">
-    <img src="{% static 'img/ilac4.jpg' %}" alt="Image 4">
-    <img src="{% static 'img/ilac5.jpeg' %}" alt="Image 5">
-    <img src="{% static 'img/ilac6.jpg' %}" alt="Image 6">
-    <img src="{% static 'img/ilac7.jpg' %}" alt="Image 7">
-    <img src="{% static 'img/ilac8.jpg' %}" alt="Image 8">
-    <img src="{% static 'img/ilac11.png' %}" alt="Image 11">
-    <img src="{% static 'img/ilac12.jpg' %}" alt="Image 12">
-</div>
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1000: { items: 3 }
+            }
+        });
+    });
+</script>
 {% endblock %}

@@ -18,6 +18,7 @@ from .models import ChildrenServicesContact
 from .models import NACDCContact, NACDCBoardMember
 from .models import HousingCounselorContact
 from .models import RebuildingTestimonial
+from .models import ILACImage
 
 
 
@@ -137,3 +138,8 @@ class RebuildingTestimonialAdmin(admin.ModelAdmin):
     list_display = ('name', 'quote', 'created_at')
     search_fields = ('name', 'quote')
     ordering = ('-created_at',)
+
+
+@admin.register(ILACImage)
+class ILACImageAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'image')
