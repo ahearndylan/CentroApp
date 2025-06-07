@@ -215,7 +215,6 @@ CENTRO | HOME
 <section class="expanding-our-reach py-5">
     <div class="container-fluid">
         <div class="row">
-            <!-- Image on the Left -->
             <div class="col-md-6">
                 <img src="{% static 'img/homepage5.png' %}" alt="Expanding Our Reach" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
@@ -873,8 +872,8 @@ CENTRO | HOME
         autoplay: true,
         autoplayTimeout: 5000,
         autoplayHoverPause: true,
-        nav: false, // Default navigation disabled
-        dots: true, // Enable dots
+        nav: false, 
+        dots: true, 
         responsive: {
             0: { items: 1 },
             768: { items: 2 },
@@ -882,7 +881,6 @@ CENTRO | HOME
         }
     });
 
-    // Custom Navigation Buttons
     $(".owl-prev").click(function () {
         owl.trigger("prev.owl.carousel");
     });

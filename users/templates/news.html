@@ -421,7 +421,6 @@ CENTRO | NEWS
     </div>
 </div>
 -->
-<!-- ✅ Move article-container OUTSIDE the loop -->
 <div class="article-container">
     {% for article in dynamic_articles %}
     <div class="enhanced-article-window" onclick="openArticle('article-{{ article.id }}')">
@@ -440,7 +439,6 @@ CENTRO | NEWS
         </div>
     </div>
 
-    <!-- Full article popup -->
     <div id="article-{{ article.id }}" class="full-article-popup">
         <div class="full-article-content">
             <span class="close-button" onclick="closeArticle('article-{{ article.id }}')">&times;</span>
@@ -510,9 +508,9 @@ CENTRO | NEWS
 
     .article-container {
         display: flex;
-        flex-direction: column;  /* 👈 Stack vertically */
-        align-items: center;     /* 👈 Center each article block */
-        gap: 30px;               /* Optional: space between articles */
+        flex-direction: column;  
+        align-items: center;     
+        gap: 30px;               
         margin-bottom: 40px;
     }
 
@@ -705,7 +703,7 @@ CENTRO | NEWS
     document.addEventListener('DOMContentLoaded', function() {
     const hash = window.location.hash;
     if (hash) {
-        const articleId = hash.substring(1); // Remove the "#" from the hash
+        const articleId = hash.substring(1); 
         openArticle(articleId);
     }
 });

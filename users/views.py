@@ -38,6 +38,7 @@ from .models import NACDCContact, NACDCBoardMember
 from .models import HousingCounselorContact
 from .models import RebuildingTestimonial
 from .models import ILACImage
+from .forms import SubscribeForm
 
 
 
@@ -328,11 +329,13 @@ def home(request):
     logos = PartnerLogo.objects.all()[:5]
     reviews = Review.objects.all().order_by('-created_at')  # optional limit: [:10]
     news_articles = NewsArticle.objects.filter(featured_on_homepage=True)[:4]
+    subscribe_form = SubscribeForm()
 
     return render(request, 'home.html', {
         'partner_logos': logos,
         'reviews': reviews,
         'news_articles': news_articles,
+        'subscribe_form': subscribe_form,
     })
 
 def food(request):
