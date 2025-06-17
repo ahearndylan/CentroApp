@@ -7,6 +7,61 @@ CENTRO | HOME
 
 {% block content %}
 
+
+<!--
+<section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <div class="position-relative" style="height: 90vh; overflow: hidden;">
+        <img src="{% static 'img/homepage1.jpg' %}" class="d-block w-100 h-100 object-fit-cover" alt="Golden Generation">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-white" style="background-color: rgba(0,0,0,0.5); top:0; bottom:0;">
+          <h2 class="display-6 fw-light text-uppercase text-shadow">Embracing Our</h2>
+          <h1 class="display-4 fw-bold text-yellow text-shadow">Commitment</h1>
+          <h2 class="display-6 fw-light text-uppercase text-shadow">To Our Golden Generation</h2>
+          <a href="{% url 'foster' %}" class="btn btn-outline-light btn-lg mt-3">Learn More About Our AFC Programs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="position-relative" style="height: 90vh; overflow: hidden;">
+        <img src="{% static 'img/homepage2aaaa.png' %}" class="d-block w-100 h-100 object-fit-cover" alt="Children Programs">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-white" style="background-color: rgba(0,0,0,0.5); top:0; bottom:0;">
+          <h2 class="display-6 fw-light text-uppercase text-shadow">Nurture</h2>
+          <h1 class="display-4 fw-bold text-yellow text-shadow">Educate</h1>
+          <h2 class="display-6 fw-light text-uppercase text-shadow">& Teach Compassion</h2>
+          <a href="{% url 'family' %}" class="btn btn-outline-light btn-lg mt-3">Learn More About Our Programs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="position-relative" style="height: 90vh; overflow: hidden;">
+        <img src="{% static 'img/homepage3aaaa.png' %}" class="d-block w-100 h-100 object-fit-cover" alt="Community & Culture">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-white" style="background-color: rgba(0,0,0,0.5); top:0; bottom:0;">
+          <h2 class="display-6 fw-light text-uppercase text-shadow">Celebrating</h2>
+          <h1 class="display-4 fw-bold text-yellow text-shadow">Community</h1>
+          <h2 class="display-6 fw-light text-uppercase text-shadow">& Culture</h2>
+          <a href="{% url 'ilac' %}" class="btn btn-outline-light btn-lg mt-3">Latin American Festival</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</section>
+-->
+
+
 <section class="top-section position-relative">
     <div class="container-fluid px-0">
         <div class="row g-0">
@@ -220,7 +275,7 @@ CENTRO | HOME
             </div>
             <div class="col-md-6 d-flex align-items-center">
                 <div class="p-5" style="background-color: #f7f9fc; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); border-radius: 8px;">
-                    <h2 class="mb-3" style="font-size: 2.5rem; font-weight: bold; color: #0066cc;">EXPANDING OUR REACH</h2>
+                    <h2 class="mb-3" style="font-size: 2.5rem; font-weight: bold; color: #0066cc; text-align: center;">EXPANDING OUR REACH</h2>
                     <p class="text-center mb-3" style="font-size: 1.25rem; font-weight: 600; color: #e7833c;">
                         Servicing much more than just Latinos
                     </p>
@@ -231,7 +286,7 @@ CENTRO | HOME
                         CENTRO’s mission and the community it serves has evolved, as the make-up of Worcester’s population has changed. Today, we proudly serve individuals and families from North, Central, and South America, as well as people from countries across Africa, Southeast Asia, and the Middle East.
                     </p>
                     <div class="text-center">
-                        <a href="{% url 'food' %}" class="btn btn-primary custom-btn mt-4 px-4 py-2">Programs &gt;</a>
+                        <a href="{% url 'food' %}" class="btn btn-primary custom-btn mt-4 px-4 py-2">Programs</a>
                     </div>
                 </div>
             </div>
@@ -244,7 +299,7 @@ CENTRO | HOME
         <div class="row">
             <div class="col-md-6 d-flex align-items-center">
                 <div class="p-5" style="background-color: #f7f9fc; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); border-radius: 8px;">
-                    <h2 class="mb-3" style="font-size: 2.5rem; font-weight: bold; color: #0066cc;">OUR PURPOSE</h2>
+                    <h2 class="mb-3" style="font-size: 2.5rem; font-weight: bold; color: #0066cc; text-align: center;">OUR PURPOSE</h2>
                     <p class="text-center mb-3" style="font-size: 1.25rem; font-weight: 600; color: #e7833c;">
                         A commitment to excellence, integrity, personal accountability, collaboration, respect, dignity and compassion.
                     </p>
@@ -258,7 +313,7 @@ CENTRO | HOME
                         Our employees are committed to their clients first, then, their colleagues, and finally our institution.
                     </p>
                     <div class="text-center">
-                        <a href="{% url 'about' %}" class="btn btn-primary custom-btn mt-4 px-4 py-2">Learn More &gt;</a>
+                        <a href="{% url 'about' %}" class="btn btn-primary custom-btn mt-4 px-4 py-2">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -601,6 +656,20 @@ CENTRO | HOME
 
 <style>  
 
+.top-section .image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.top-section .image-container img {
+  transition: transform 0.6s ease;
+}
+
+.top-section .image-container:hover img {
+  transform: scale(1.08);
+}
+
+
     .owl-nav button {
             outline: none;
         }
@@ -737,7 +806,7 @@ CENTRO | HOME
 .fade-in-animation {
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 2s ease-out, transform 2s ease-out;
 }
 
 .fade-in-animation.animate {
