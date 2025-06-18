@@ -39,6 +39,9 @@ from .models import HousingCounselorContact
 from .models import RebuildingTestimonial
 from .models import ILACImage
 from .forms import SubscribeForm
+from .models import SuggestionBoxMessage
+from .forms import SuggestionBoxForm
+
 
 
 
@@ -126,6 +129,21 @@ def contact(request):
 
 def forms(request):
     return render(request, 'forms.html')
+
+def suggestion_box_view(request):
+    if request.method == 'POST':
+        form = SuggestionBoxForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('suggestions_success')
+    else:
+        form = SuggestionBoxForm()
+    return render(request, 'forms/suggestions.html', {'form': form})
+
+
+def suggestions_success(request):
+    return render(request, 'forms/suggestions_success.html')
+
 
 
 

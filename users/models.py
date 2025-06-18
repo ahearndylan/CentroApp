@@ -236,3 +236,21 @@ class ILACImage(models.Model):
 
     def __str__(self):
         return self.caption or f"ILAC Image {self.id}"
+    
+class SuggestionBoxMessage(models.Model):
+    SUBMISSION_TYPES = [
+        ('Complaint', 'Complaint'),
+        ('Suggestion', 'Suggestion'),
+        ('Survey', 'Survey'),
+    ]
+
+    submission_type = models.CharField(max_length=20, choices=SUBMISSION_TYPES)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.submission_type} submitted on {self.created_at.strftime('%Y-%m-%d')}"
+
+    class Meta:
+        verbose_name = "Suggestion Box Submission"
+        verbose_name_plural = "Suggestion Box Submissions"

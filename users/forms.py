@@ -2,6 +2,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import SuggestionBoxMessage
+
 
 class SubscribeForm(forms.Form):
     full_name = forms.CharField(max_length=255, required=True)
@@ -90,3 +92,13 @@ class SubscribeForm(forms.Form):
         widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email*'}),
         required=True
     )
+
+class SuggestionBoxForm(forms.ModelForm):
+    class Meta:
+        model = SuggestionBoxMessage
+        fields = ['submission_type', 'message']
+        widgets = {
+            'submission_type': forms.Select(attrs={'class': 'form-select'}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'rows': 6}),
+        }
+

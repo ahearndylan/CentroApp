@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+CENTRO | Suggestion Box
+{% endblock %}
+
+{% block content %}
+<h2 class="text-center title-heading">
+    Anonymous <span class="title-highlight">Suggestion Box</span>
+</h2>
+
+<div class="container my-5">
+    <div class="card shadow-lg p-5">
+        <h4 class="text-center mb-4 fw-bold" style="color: #1d4db8;">Submit Your Feedback</h4>
+        <p class="text-center text-muted mb-5" style="max-width: 600px; margin: auto;">
+            Please submit any anonymous suggestions or complaints using the form below.
+        </p>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="mb-4">
+                {{ form.submission_type.label_tag }}
+                {{ form.submission_type }}
+            </div>
+            <div class="mb-4">
+                {{ form.message.label_tag }}
+                {{ form.message }}
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-5 py-2" style="max-width: 300px;">Submit Anonymously</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.title-heading {
+    color: #ffffff;
+    background-color: #8CB7E0;
+    padding: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.title-highlight {
+    color: #EFE5A6;
+}
+.card {
+    border-radius: 12px;
+    background-color: #fdfdfd;
+}
+form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+form .form-control, form .form-select {
+    border-radius: 6px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+}
+</style>
+{% endblock %}

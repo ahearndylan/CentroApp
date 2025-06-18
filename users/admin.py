@@ -19,6 +19,8 @@ from .models import NACDCContact, NACDCBoardMember
 from .models import HousingCounselorContact
 from .models import RebuildingTestimonial
 from .models import ILACImage
+from .models import SuggestionBoxMessage
+
 
 
 
@@ -143,3 +145,9 @@ class RebuildingTestimonialAdmin(admin.ModelAdmin):
 @admin.register(ILACImage)
 class ILACImageAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'image')
+
+@admin.register(SuggestionBoxMessage)
+class SuggestionBoxMessageAdmin(admin.ModelAdmin):
+    list_display = ('submission_type', 'created_at')
+    list_filter = ('submission_type', 'created_at')
+    ordering = ('-created_at',)

@@ -37,6 +37,10 @@ urlpatterns = [
     path('forms/referral/', user_views.referral_view, name='referral_form'),
     path("forms/referral_success/", user_views.referral_success, name="referral_success"),
 
+    path('forms/suggestions/', user_views.suggestion_box_view, name='suggestions'),
+    path('forms/suggestions_success/', user_views.suggestions_success, name='suggestions_success'),
+
+
     path('programs/children/', user_views.children, name='children'),
     path('programs/community/', user_views.community, name='community'), 
     path('programs/family/', user_views.family, name='family'),
